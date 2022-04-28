@@ -1,9 +1,22 @@
 :root {
-  --fontMain:'rubik', regular;
-  --titleOneColor: #FFFFFF;
-  --titleTwoColor: #3634F7;
-  --button-color: #D842BD;
-  
-  }
+  --fontMain: "rubik", regular;
+  --titleOneColor: #ffffff;
+  --titleTwoColor: #3634f7;
+  --button-color: #d842bd;
 
-  
+  --background-color-list-header: #f1f1f1;
+  --background-color-list-body: #ffffff;
+  --search-list-text-color: #d842bd;
+}
+
+/*RESPONSIVIDADE: font-size: 16px (Desktop)*/
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; /* 15px*/
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%; /* 14px*/
+  }
+}
