@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  padding: 9.375rem 11.5rem 5.3125rem 11.5rem;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  background-image: url("../../img/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

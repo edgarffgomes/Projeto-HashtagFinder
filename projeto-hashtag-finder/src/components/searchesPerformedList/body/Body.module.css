@@ -1,0 +1,81 @@
+.title {
+  font-family: var(--fontMain);
+  color: var(--titleOneColor);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.table-container {
+  width: auto;
+  border-radius: 0.875rem;
+  background-color: var(--background-color-list-header);
+  margin-top: 2.5rem;
+}
+
+.table-header {
+  font-family: var(--fontMain);
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  color: var(--titleTwoColor);
+  background-color: var(--background-color-list-header);
+  height: 6.625rem;
+  border-radius: inherit;
+  display: flex;
+  width: 100%;
+
+  padding-top: 3.5rem;
+  padding-left: 3.9375rem;
+}
+
+.table-header span:first-child {
+  min-width: 72%;
+  max-width: 72%;
+}
+
+.table-header span + span {
+  min-width: 14%;
+  max-width: 14%;
+}
+
+.table-body {
+  background-color: var(--background-color-list-body);
+  border-radius: inherit;
+}
+
+.table-body .table-body-line:last-child {
+  padding-bottom: 2.7rem;
+}
+
+.table-body-line {
+  font-family: var(--fontMain);
+  font-size: 1.3rem;
+  display: flex;
+  width: 100%;
+
+  padding-top: 1.5rem;
+  padding-left: 3.5rem;
+  padding-bottom: 1.3rem;
+}
+
+.table-body-line span:first-child {
+  min-width: 71.8%;
+  max-width: 71.8%;
+}
+
+.table-body-line span + span {
+  min-width: 14%;
+  max-width: 14%;
+}
+
+.table-body-line span + span {
+  color: var(--search-list-text-color);
+}
+
+.table-body .divisor {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #a8a8b3;
+  margin: 0 1rem;
+}
