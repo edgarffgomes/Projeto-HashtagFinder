@@ -1,0 +1,41 @@
+@import '../../css/Global.css';
+
+/* CORPO DO CABEÇALHO */
+.bgHeader{
+  height: 790px;
+  width: 100%;
+  background-image: url('../../img/hero-bg.jpg');
+  background-size: cover;
+}
+
+/* ESTILIZA OS TEXTOS DO CABEÇALHO */
+.bgTitle{
+  margin-left: 140px;
+  margin-top: 250px;
+}
+
+.bgTitle h1 {
+  font-size: 82px;
+  width: 800px;
+  color: var(--titleOneColor);
+  font-family: var(--fontMain);
+  font-weight: bold;
+}
+
+.bgTitle p {
+  font-size: 31px;
+  font-family: var(--fontMain);
+  color: var(--titleOneColor);
+  width: 610px;
+  margin-top: 30px;
+}
+
+/* ESTILIZA O INPUT DE PESQUISA */
+.bgSearch{
+  width: 1000px;
+  background-color: var(--titleOneColor);
+  margin: 0 auto;
+  margin-top: 260px;
+  height: 119px;
+  border-radius: 72px;
+}
