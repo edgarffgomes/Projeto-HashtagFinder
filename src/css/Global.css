@@ -9,6 +9,11 @@
   --search-list-text-color: #d842bd;
 }
 
+  *{
+    box-sizing: border-box;
+  }
+
+
 /*RESPONSIVIDADE: font-size: 16px (Desktop)*/
 @media (max-width: 1080px) {
   html {
