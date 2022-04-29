@@ -1,8 +1,6 @@
 .bgAbout {
   display: inline-block;
   background: url(../../img/about-bg.jpg) no-repeat;
-  /* background-size: cover; */
-
   width: 100%;
   height: 422px;
 }
@@ -16,46 +14,31 @@
   margin: 250px 0px 0px 140px;
 }
 
-
-
 .container {
-  /* display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
-  justify-content: space-evenly;
-  margin-top:193px ;
-  gap: 197px; */
-
   display: flex;
-  justify-content: space-around;
-  margin-top: 193px;
+  justify-content: space-between;
+  /* margin-top: 193px; */
   width: 100%;
-
+  border: solid blue;
+  margin: 194px auto;
+  padding: 20px 135px;
   border: solid blue;
 }
 
 .paragraph {
-  /* margin-left: 140px; */
-  /* margin-right: 197px; */
   width: 754px;
-  /* width: 754px; */
+  min-width: 350px;
   border: 2px solid red;
 }
 
 .paragraphTitle {
-  /* width: 50%; */
   color: var(--titleTwoColor);
   font: bold 2.9em/48px 'Rubik', sans-serif;
+  margin-bottom: 25px;
 }
 
-/* texto */
-/* p {
-  width: 754px;
-} */
-
 .illustration {
-  /* width: 50%; */
-  width: 634px;
-
-  /* margin-right: auto; */
+  width: 100%;
+  min-width: 400px;
   border: 4px solid rebeccapurple;
 }

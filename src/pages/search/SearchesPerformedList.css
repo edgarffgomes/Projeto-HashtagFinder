@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.bgNav nav{
+  position: absolute;
+}
+
 .main-container {
   padding: 9.375rem 11.5rem 5.3125rem 11.5rem;
   min-height: 100vh;
