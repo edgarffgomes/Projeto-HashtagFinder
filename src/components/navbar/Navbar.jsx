@@ -1,34 +1,29 @@
-import React from 'react';
-import Button from '../button/Button';
-import styles from './Header.module.css';
 import '../../css/Global.css';
+import React from 'react';
+import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Navbar = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.bgHeader}>
-        <div>
+    <nav className={styles.bgNav}>
+      <div className={styles.bgTitle}>
+        <Link to="/">
           <h2>
             hashtag<strong>finder</strong>
           </h2>
-        </div>
-        <div className={styles.bgButton}>
-          <Button style={styles}>
-            <div className={styles.imgButtonOn}>
-              <img src="../../img/icon-info-circle.svg" alt="" />
-            </div>
-            SOBRE
-          </Button>
-          <Button className={styles}>
-            <div className={styles.imgButtonLogin}>
-              <img src="../../img/icon-user-alt.svg" alt="" />
-            </div>
-            LOGIN
-          </Button>
-        </div>
+        </Link>
       </div>
-    </header>
+      <div className={styles.bgButton}>
+        <Link to="/about">
+          <button className={styles.bgAbout}>SOBRE</button>
+        </Link>
+
+        <Link to="/login">
+          <button className={styles.bgLogin}>LOGIN</button>
+        </Link>
+      </div>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

@@ -1,0 +1,77 @@
+@import '../../css/Global.css';
+
+nav{
+  position: fixed;
+}
+
+/* CORPO DO CABEÇALHO */
+.bgHeader{
+  height: 790px;
+  width: 100%;
+  background-image: url('../../img/hero-bg.jpg');
+  background-size: cover;
+}
+
+/* ESTILIZA OS TEXTOS DO CABEÇALHO */
+.bgTitle{
+  margin-left: 140px;
+  margin-top: 250px;
+}
+
+.bgTitle h1 {
+  font-size: 82px;
+  width: 800px;
+  color: var(--titleOneColor);
+  font-family: var(--fontMain);
+  font-weight: bold;
+}
+
+.bgTitle p {
+  font-size: 31px;
+  font-family: var(--fontMain);
+  color: var(--titleOneColor);
+  width: 610px;
+  margin-top: 30px;
+}
+
+/* ESTILIZA O INPUT DE PESQUISA */
+.bgSearch{
+  width: 1000px;
+  background-color: var(--titleOneColor);
+  margin: 0 auto;
+  margin-top: 260px;
+  height: 119px;
+  border-radius: 72px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 2px rgb(0 0 0);
+  outline: none;
+  transition: 0.5s;
+}
+
+.bgSearch:Hover{
+box-shadow: 0 2px 3px rgb(0 0 0);
+}
+
+/* ESTILIZA A IMAGEM DO CAMPO DE BUSCA */
+.bgImageSearch {
+  padding: 47px 44px 50px 60px;
+}
+
+/* ESTILIZA O CAMPO DE BUSCA */
+.bgInputSearch{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.bgInputSearch input {
+  width: 100%;
+  border: none;
+  border-radius: 72px;
+  color: var( --titleTwoColor);
+  outline: none;
+  font-size: 50px;
+  color: var(--color-input-search);
+}

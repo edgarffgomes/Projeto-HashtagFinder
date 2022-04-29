@@ -1,62 +1,62 @@
-.header{
-  display: flex;
-  width: 100%;
-  height: 788px;
-  background-image: url('../../img/hero-bg.jpg');
-  background-size: cover;
-}
+@import '../../css/Global.css';
 
-.bgHeader{
+ *{
+  text-decoration: none;
+ }
+ 
+/* ESTILIZA O CAMPO DE NAVEGAÇÃO */
+.bgNav{
+  height: 50px;
   width: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
-  padding: 0 50px;
+  align-items: center;
+  padding: 40px 65px;
+  top: 0;
+  left: 0;
 }
 
-.bgHeader h2 {
-  font-size: 32px;
-  color: var(--titleOneColor);
+/* ESTILIZA O TITULO DA NAVEGAÇÃO */
+.bgTitle h2{
   font-family: var(--fontMain);
+  color: var(--titleOneColor);
+  font-size: 40px;
+
 }
 
-.bgHeader strong{
+/* ESTILIZA O STRONG QUE ESTÁ DENTRO DO H2 */
+.bgTitle strong{
   font-weight: bold;
 }
 
-/* BOTÕES */
-
-.bgButton{
-  display: flex;
-}
-
-.imgButtonOn{
-  background-image: url('../../img/icon-info-circle.svg');
-  background-repeat: no-repeat;
-  width: 12px;
-  padding-right: 14px;
-}
-
-.imgButtonLogin{
-  background-image: url('../../img/icon-user-alt.svg');
-  background-repeat: no-repeat;
-  width: 12px;
-  padding-right: 14px;
-}
-
-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button:first-child{
-  background-color: var(--button-color);
+/* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
+.bgButton button{
+  height: 50px;
+  width: 170px;
+  border-radius: 25px;
+  border: none;
   color: var(--titleOneColor);
-  margin: 0 35px;
-  
+  cursor: pointer;
+  transition: 0.5s;
 }
-button:last-child{
+
+/* BOTÃO SOBRE */
+.bgAbout{
+  background-color: var(--button-color);
+  margin-right: 35px ;
+}
+
+.bgAbout:hover{
+  background-color: var(--button-color-hover) ;
+}
+
+/* BOTÃO LOGIN */
+.bgLogin{
   background-color: var(--titleTwoColor);
-  color: var(--titleOneColor)
+}
+
+.bgLogin:hover{
+  background-color: var(--button-color-hover2);
 }
