@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/Global.css";
+import "../../css/Global.css";
 import styles from "./Body.module.css";
 
 const Body = () => {

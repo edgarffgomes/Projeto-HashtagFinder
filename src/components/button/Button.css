@@ -1,0 +1,7 @@
+button {
+  border-radius: 25px;
+  width: 170px;
+  height: 49px;
+  border: none;
+  color: var(--fontMain);
+}

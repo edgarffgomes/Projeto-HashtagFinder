@@ -1,12 +1,12 @@
-.header{
+.header {
   display: flex;
   width: 100%;
   height: 788px;
-  background-image: url('../../img/hero-bg.jpg');
+  background-image: url("../../img/hero-bg.jpg");
   background-size: cover;
 }
 
-.bgHeader{
+.bgHeader {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -20,43 +20,42 @@
   font-family: var(--fontMain);
 }
 
-.bgHeader strong{
+.bgHeader strong {
   font-weight: bold;
 }
 
 /* BOTÕES */
 
-.bgButton{
+.bgButton {
   display: flex;
 }
 
-.imgButtonOn{
-  background-image: url('../../img/icon-info-circle.svg');
+.imgButtonOn {
+  background-image: url("../../img/icon-info-circle.svg");
   background-repeat: no-repeat;
   width: 12px;
   padding-right: 14px;
 }
 
-.imgButtonLogin{
-  background-image: url('../../img/icon-user-alt.svg');
+.imgButtonLogin {
+  background-image: url("../../img/icon-user-alt.svg");
   background-repeat: no-repeat;
   width: 12px;
   padding-right: 14px;
 }
 
-button{
+button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-button:first-child{
+button:first-child {
   background-color: var(--button-color);
   color: var(--titleOneColor);
   margin: 0 35px;
-  
 }
-button:last-child{
+button:last-child {
   background-color: var(--titleTwoColor);
-  color: var(--titleOneColor)
+  color: var(--titleOneColor);
 }
