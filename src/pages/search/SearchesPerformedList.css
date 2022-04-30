@@ -1,6 +1,8 @@
-* {
+/* linha de código desnecessária pois a mesma já existe no css global*/
+
+ /* * {
   box-sizing: border-box;
-}
+}  */
 
 .bgNav nav{
   position: absolute;
