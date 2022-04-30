@@ -1,14 +1,15 @@
 import React from 'react';
-import Header from '../components/searchesPerformedList/header/Header';
-import Body from '../components/searchesPerformedList/Body';
-
+import Navbar from '../../components/navbar/Navbar';
+import Body from '../../components/searchesPerformedList/Body';
 import './SearchesPerformedList.css';
 
 const SearchesPerformedList = () => {
   return (
-    <div className="main-container">
-      <Header />
-      <Body />
+    <div className="bgNav">
+      <Navbar />
+      <div className="main-container">
+        <Body />
+      </div>
     </div>
   );
 };
