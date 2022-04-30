@@ -1,22 +1,24 @@
 :root {
-  --fontMain: "rubik", regular;
+  --fontMain: 'rubik', regular;
   --titleOneColor: #ffffff;
   --titleTwoColor: #3634f7;
   --button-color: #d842bd;
   --button-color-hover: #c42fa8;
-  --button-color-hover2: #2b2bd1 ;
+  --button-color-hover2: #2b2bd1;
   --background-color-list-header: #f1f1f1;
   --background-color-list-body: #ffffff;
   --search-list-text-color: #d842bd;
-  --color-input-search: #8D9DA2;
+  --color-input-search: #8d9da2;
 }
 
-  *{
-    box-sizing: border-box;
-  }
 
+* {
+  box-sizing: border-box;
+}
 
+/* Depois me expliquem esses media aqui  att joão */
 /*Responsividade: font-size: 16px (Desktop)*/
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%; /* 15px*/
@@ -27,4 +29,3 @@
     font-size: 87.5%; /* 14px*/
   }
 }
-
