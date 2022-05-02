@@ -1,15 +1,11 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 body{
+	
+}
+.container{
 	background-image: url("../../img/login-bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: Rubik;
-}
-.container{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -17,7 +13,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-header{
+.head{
 	display: flex;
 	width: 100%;
 	height: 80px;
@@ -69,20 +65,23 @@ header{
 	display: flex;
 	flex-direction: column;
 	height: 57.5px;
+	width: 457px;
 	font-size: 17px;
 	color: #292929;
 }
 .usernameSection{
 	margin-top: 118px;
 }
-.usernameLabel, .paswordLabel{
-	margin-bottom: 1px;
-}
 .usernameInput, .passwordInput{
-	border-radius: 5px;
+	width: 100%;
+	outline: none;
+	border:  none;
+	border-bottom: 2px solid #E9E9F0;
 }
 .accessButton{
+	display: flex;
 	background: #3633F7;
+	margin: 0 auto;
 	margin-top: 20px;
 	border: none;
 	border-radius: 34px;
@@ -90,5 +89,8 @@ header{
 	width: 205px;
 	color: #FFFFFF;
 	font-size: 19px;
+	align-items: center;
+	justify-content: center;
 	letter-spacing: 0.57px;
+	cursor: pointer;
 }

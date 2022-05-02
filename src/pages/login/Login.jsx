@@ -1,28 +1,26 @@
 import React from "react";
 import Logo from "../../img/logo-white.svg"
 import HomeIcon from "../../img/icon-home.svg"
-import"./Login.css"
-
+import style from "./Login.module.css"
 const Login = ()=>{
 
 	return(
-		<div className="container">
-			<header>
-				<img className="logo" src={Logo}/>
-				<button className="homeButton"><img src={HomeIcon}/>home</button>
+		<div className={style.container}>
+			<header className={style.head}>
+				<img className={style.logo} src={Logo}/>
+				<button className={style.homeButton}><img src={HomeIcon}/>home</button>
 			</header>
-			<div className="loginContainer">		
-				<form className="loginForm">
+			<div className={style.loginContainer}>		
+				<form className={style.loginForm}>
 					<h3>Login</h3>
-					<div className="usernameSection">
-						<label className="usernameLabel" htmlFor="username">Usuário</label>
-						<input type="text" name="username" className="usernameInput"/>
+					<div className={style.usernameSection}>
+						<input type="text" placeholder="Usuário"  className={style.usernameInput}/>
 					</div>
-					<div className="passwordSection">
-						<label className="passwordLabel" htmlFor="password">Senha</label>
-						<input type="password" name="password" className="passwordInput"/>
+					<div className={style.passwordSection}>
+						
+						<input type="password" placeholder="Senha" className={style.passwordInput}/>
 					</div>
-					<button className="accessButton">Acessar</button>
+					<button className={style.accessButton}>Acessar</button>
 				</form>
 			</div>
 		</div>
