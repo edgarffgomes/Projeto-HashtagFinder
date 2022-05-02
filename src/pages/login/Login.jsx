@@ -21,5 +21,9 @@ const Login = ()=>{
 						<input type="password" placeholder="Senha" className={style.passwordInput}/>
 					</div>
 					<button className={style.accessButton}>Acessar</button>
+				</form>
+			</div>
+		</div>
 	)
 }
+export default Login;
