@@ -7,11 +7,9 @@ nav{
 /* CORPO DO CABEÇALHO */
 .bgHeader{
   height: 790px;
-  
   width: 100%;
   background-image: url('../../img/hero-bg.jpg');
   background-size: cover;
-  
 }
 
 /* ESTILIZA OS TEXTOS DO CABEÇALHO */
