@@ -1,10 +1,4 @@
-/* linha de código desnecessária pois a mesma já existe no css global*/
-
- /* * {
-  box-sizing: border-box;
-}  */
-
-.bgNav nav{
+.bgNav nav {
   position: absolute;
 }
 
@@ -16,4 +10,16 @@
   background-image: url("../../img/login-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: 414px) {
+  .bgNav {
+    font-size: 0.875rem;
+    min-width: 25.875rem;
+  }
+
+  .main-container {
+    min-width: 25.875rem;
+    padding: 8rem 0.5625rem 0 0.5625rem;
+  }
 }

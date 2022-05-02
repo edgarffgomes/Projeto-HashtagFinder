@@ -1,5 +1,4 @@
-
-@import '../../css/Global.css';
+@import "../../css/Global.css";
 .title {
   font-family: var(--fontMain);
   color: var(--titleOneColor);
@@ -80,4 +79,55 @@
   height: 1px;
   background: #a8a8b3;
   margin: 0 1rem;
+}
+
+@media (max-width: 414px) {
+  .title {
+    width: 18.625rem;
+    height: 2.4375rem;
+
+    margin-left: 3rem;
+    margin-bottom: 3.0625rem;
+  }
+
+  .table-header {
+    padding-top: 1.125rem;
+    padding-left: 1.1875rem;
+
+    height: 3.0625rem;
+    width: 100%;
+  }
+
+  .table-header span:first-child {
+    max-width: 55%;
+    min-width: 55%;
+  }
+
+  .table-body-line {
+    padding-left: 1rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+
+    font-size: 1rem;
+    line-height: 1.1875rem;
+  }
+
+  .table-body-line span:first-child {
+    min-width: 55%;
+    max-width: 55%;
+  }
+
+  .table-body .table-body-line:last-child {
+    padding-bottom: 1rem;
+  }
+
+  .table-header span + span {
+    max-width: 20%;
+    min-width: 20%;
+  }
+
+  .table-body-line span + span {
+    min-width: 20%;
+    max-width: 20%;
+  }
 }
