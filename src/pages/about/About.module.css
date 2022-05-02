@@ -1,0 +1,62 @@
+.bgAbout {
+  display: inline-block;
+  display: flex;
+  background: url(../../img/about-bg.jpg) center center/cover no-repeat fixed;
+  width: 100vw;
+}
+
+
+
+.bgTitle {
+  /* line height original 90 muito colado,
+  quando quebra diminui para 80*/
+  font: bold 5.5em/90px 'Rubik', sans-serif;
+  color: #fff;
+  margin: 250px 0px 0px 140px;
+  /* border: solid 2px black; */
+}
+
+.container {
+  /* solução quase perfeita funciona perfeitamente na tela de de 1920 de width e em telas maiores que 1920 
+  porém em telas a partir de 1370 a responsividade no meio continua fluindo fazendo com que a imagem encoste no
+  titulo antes da hora, por conta do space-around ser automático.
+  */
+
+  /* melhor opção no momento */
+  display: flex;
+  margin: 193px 0 183px 0;
+  justify-content: space-around;
+  /* border: solid blue; */
+  width: 100%;
+
+  /* feita pelo alexandre funciona até alinha com o titulo quando o mesmo esta com a margem igual funciona 
+  muito bem até a tela ter 900px porém quando a tela diminui abaixo de 900px o espaçamento acaba atrapalhando
+  empurrando a imagem e o texto para fora..
+   */
+  /* width: 100%;
+  display: flex;
+  margin: 193px 0 183px 0;
+  justify-content: space-between;
+  padding: 20px 140px; 
+  border: solid blue; */
+ 
+}
+
+.paragraph {
+  width: 754px;
+  min-width: 350px;
+  /* border: 4px solid red; */
+}
+
+/* proxima att realizar alteração na unidade da fonte */
+.paragraphTitle {
+  color: var(--titleTwoColor);
+  font: bold 2.9em/48px 'Rubik', sans-serif;
+  margin-bottom: 25px;
+}
+
+.illustration {
+  width: 100%;
+  min-width: 400px;
+  /* border: 4px solid rebeccapurple; */
+}
