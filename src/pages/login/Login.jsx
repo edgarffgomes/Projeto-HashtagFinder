@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../img/logo-white.svg"
 import HomeIcon from "../../img/icon-home.svg"
 import style from "./Login.module.css"
-//impor Navbar from ../../componentes/navbar
+//import Navbar from ../../componentes/navbar
 const Login = ()=>{
 
 	return(
