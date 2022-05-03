@@ -80,3 +80,24 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   opacity: 0.31;
   letter-spacing: 0;
 }
+
+/* TEXTO DE EXIBIÇÃO DE IMAGENS */
+.bgMain{
+  width: 100%;
+  display: block;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.bgDisplaySearch{
+  display: flex;
+  justify-content: center;
+}
+
+.bgDisplaySearch h2{
+  font-size: 32px;
+  font-family: var(--fontMain);
+  color: var(--titleTwoColor);
+  letter-spacing: 0;
+  margin-bottom: 114px;
+}
