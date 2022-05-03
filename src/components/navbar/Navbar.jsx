@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ fButton, sButton }) => {
   return (
     <nav className={styles.bgNav}>
       <div className={styles.bgTitle}>
@@ -15,11 +15,11 @@ const Navbar = () => {
       </div>
       <div className={styles.bgButton}>
         <Link to="/about">
-          <button className={styles.bgAbout}>SOBRE</button>
+          <button className={styles.bgAbout}>{fButton}</button>
         </Link>
 
         <Link to="/login">
-          <button className={styles.bgLogin}>LOGIN</button>
+          <button className={styles.bgLogin}>{sButton}</button>
         </Link>
       </div>
     </nav>

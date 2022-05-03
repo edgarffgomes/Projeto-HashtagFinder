@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Navbar></Navbar>
+        <Navbar fButton="SOBRE" sButton="LOGIN" />
         {/* background do cabeçalho */}
         <header className={styles.bgHeader}>
           {/* background do titulo */}
