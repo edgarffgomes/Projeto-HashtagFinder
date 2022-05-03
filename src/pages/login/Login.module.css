@@ -92,3 +92,17 @@
 	letter-spacing: 0.57px;
 	cursor: pointer;
 }
+@media  screen and (max-width: 414px) {
+	.head{
+		height: 30px;
+	}
+	.logo{
+		width: 57px;
+		height: 23px;
+	}
+	.homeButton{
+		margin-right: 33px;
+		width: 106px;
+		height: 30px;
+	}
+} 

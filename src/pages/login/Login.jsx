@@ -2,10 +2,12 @@ import React from "react";
 import Logo from "../../img/logo-white.svg"
 import HomeIcon from "../../img/icon-home.svg"
 import style from "./Login.module.css"
+//impor Navbar from ../../componentes/navbar
 const Login = ()=>{
 
 	return(
 		<div className={style.container}>
+			{/*<Navbar/>*/}
 			<header className={style.head}>
 				<img className={style.logo} src={Logo}/>
 				<button className={style.homeButton}><img src={HomeIcon}/>home</button>
