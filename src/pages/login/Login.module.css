@@ -1,0 +1,149 @@
+body .container{
+	background-image: url("../../img/login-bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: Rubik;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.head{
+	display: flex;
+	width: 100%;
+	height: 80px;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo{
+	margin-left: 64px;
+	height: 42px;
+}
+.homeButton{
+	display: flex;
+	cursor: pointer;
+	margin-right: 64px;
+	background: #D842BD;
+	border: none;
+	border-radius: 25px;
+	height: 49px;
+	padding: 25px;
+	align-items: center;
+	letter-spacing: 2.55px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+.homeButton img{
+	margin-right: 28px;
+}
+.loginContainer{
+	display: flex;
+	flex-direction: column;
+	margin: 236px auto;
+	width: 553px;
+	height: 608px;
+	background: #FFFFFF;
+	color:  black;
+	border-radius: 14px;
+}
+.loginForm{
+	margin: 131px auto;
+}
+.loginForm h3{
+	text-align: center;
+	color: #3634F7;
+	font-size: 35px;
+	font-weight: bold;
+}
+.usernameSection, .passwordSection{
+	display: flex;
+	flex-direction: column;
+	height: 57.5px;
+	width: 457px;
+	font-size: 17px;
+	color: #292929;
+}
+.usernameSection{
+	margin-top: 118px;
+}
+.usernameInput, .passwordInput{
+	width: 100%;
+	outline: none;
+	border:  none;
+	border-bottom: 2px solid #E9E9F0;
+}
+.accessButton{
+	display: flex;
+	background: #3633F7;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: none;
+	border-radius: 34px;
+	height: 56px;
+	width: 205px;
+	color: #FFFFFF;
+	font-size: 19px;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 0.57px;
+	cursor: pointer;
+}
+@media  screen and (max-width: 415px) {
+	.head{
+		margin-top: 33px;
+		height: 30px;
+		width: 382px;
+	}
+	.logo{
+		width: 130px;
+		height: 23px;
+		margin-left: 16px;
+	}
+	.homeButton{
+		margin-right: 16px;
+		padding: 10px;
+		width: 106px;
+		height: 30px;
+		font-size: 10px;
+		letter-spacing: 1.5px;
+		justify-content: center;
+	}
+	.homeButton img{
+		margin-right: 10px;
+		height: 9px;
+		width: 12px;
+	}
+	.loginContainer{
+		width: 340px;
+		height: 460px;
+		margin: 181px 37px;
+	}
+	.loginForm{
+		width: 272px;
+		margin-top: 62px;
+	}
+	.loginForm h3{
+		font-size: 34px;
+	}
+	.usernameSection, .passwordSection{
+		width: 272px;
+		height: 32px;
+	}
+	.usernameSection{
+		margin-top: 86px;
+	}
+	.passwordSection{
+		margin-top: 84px;
+	}
+	.accessButton{
+		margin-top: 40px;
+		width: 213px;
+		height: 58px;
+		font-size: 18px;
+	}
+} 

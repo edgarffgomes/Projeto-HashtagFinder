@@ -10,6 +10,7 @@ nav{
   width: 100%;
   background-image: url('../../img/hero-bg.jpg');
   background-size: cover;
+  box-shadow: inset 0 -120px var(--titleOneColor);
 }
 
 /* ESTILIZA OS TEXTOS DO CABEÇALHO */
@@ -32,30 +33,31 @@ nav{
   color: var(--titleOneColor);
   width: 610px;
   margin-top: 30px;
+ /*  font-weight: bold; */
 }
 
 /* ESTILIZA O INPUT DE PESQUISA */
 .bgSearch{
-  width: 1000px;
+  width: 50%;
   background-color: var(--titleOneColor);
   margin: 0 auto;
-  margin-top: 260px;
-  height: 119px;
+  margin-top: 110px;
   border-radius: 72px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 2px rgb(0 0 0);
+  box-shadow: 8px 14px 30px var(--color-box-shadow);
   outline: none;
   transition: 0.5s;
+  height: 119px;
 }
 
 .bgSearch:Hover{
-box-shadow: 0 2px 3px rgb(0 0 0);
+box-shadow: 20px 15px 20px var(--color-box-shadow);
 }
 
 /* ESTILIZA A IMAGEM DO CAMPO DE BUSCA */
 .bgImageSearch {
-  padding: 47px 44px 50px 60px;
+  padding: 47px 21px 50px 60px;
 }
 
 /* ESTILIZA O CAMPO DE BUSCA */
@@ -65,13 +67,47 @@ box-shadow: 0 2px 3px rgb(0 0 0);
     height: 100%;
 }
 
-
+/* INPUT DE PESQUISA */
 .bgInputSearch input {
   width: 100%;
   border: none;
   border-radius: 72px;
-  color: var( --titleTwoColor);
   outline: none;
   font-size: 50px;
+}
+
+.bgInputSearch input::placeholder{
   color: var(--color-input-search);
+  opacity: 0.31;
+  letter-spacing: 0;
+}
+
+/* TEXTO DE EXIBIÇÃO DE IMAGENS */
+.bgMain{
+  width: 100%;
+  display: block;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.bgDisplaySearch{
+  display: flex;
+  justify-content: center;
+}
+
+.bgDisplaySearch h2{
+  font: bold 2rem /44px 'Rubik', sans-serif;
+/*   font-size: 32px; */
+  color: var(--titleTwoColor);
+  letter-spacing: 0;
+  margin-bottom: 114px;
+
+}
+
+/* ESTILIZAÇÃO DOS CARDS DE TWEETS */
+.flexCard{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 125px 187px;
 }

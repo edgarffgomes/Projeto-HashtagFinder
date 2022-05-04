@@ -1,5 +1,5 @@
 :root {
-  --fontMain: 'rubik', regular;
+  --fontMain: 'Rubik', bold;
   --titleOneColor: #ffffff;
   --titleTwoColor: #3634f7;
   --button-color: #d842bd;
@@ -9,6 +9,10 @@
   --background-color-list-body: #ffffff;
   --search-list-text-color: #d842bd;
   --color-input-search: #8d9da2;
+  --paragraphColor: #292929;
+  --borderCardColor:#5538EE24;
+  --boxShadowCard:#5538ee14;
+  --color-box-shadow: #5538EE29;
 }
 
 

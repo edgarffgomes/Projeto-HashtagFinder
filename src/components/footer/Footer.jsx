@@ -1,8 +1,14 @@
 import React from 'react';
-import './Footer.module.css';
+import styles from './Footer.module.css';
 
 const Footer = () => {
-  return <div></div>;
+  return (
+    <>
+      <footer className={styles.bgFooter}>
+        <p>Newtab Academy 2022</p>
+      </footer>
+    </>
+  );
 };
 
 export default Footer;

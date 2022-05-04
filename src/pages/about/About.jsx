@@ -1,7 +1,9 @@
 import styles from './About.module.css';
 import illustration from '../../img/about-illustration.svg';
 import Navbar from '../../components/navbar/Navbar';
-export default function About() {
+import Members from '../../components/members/Members';
+import Footer from '../../components/footer/Footer';
+ const About = () => {
   return (
     <>
       <header>
@@ -33,7 +35,11 @@ export default function About() {
             />
           </div>
         </section>
+
+        <Members />
       </main>
+      <Footer/>
     </>
   );
-}
+};
+export default About
