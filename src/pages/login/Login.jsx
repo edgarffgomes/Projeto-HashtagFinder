@@ -1,7 +1,8 @@
 import React from "react";
-import Logo from "../../img/logo-white.svg"
-import HomeIcon from "../../img/icon-home.svg"
-import style from "./Login.module.css"
+import Logo from "../../img/logo-white.svg";
+import HomeIcon from "../../img/icon-home.svg";
+import style from "./Login.module.css";
+import { Link } from "react-router-dom";
 //import Navbar from ../../componentes/navbar
 const Login = ()=>{
 
@@ -10,7 +11,9 @@ const Login = ()=>{
 			{/*<Navbar/>*/}
 			<header className={style.head}>
 				<img className={style.logo} src={Logo}/>
-				<button className={style.homeButton}><img src={HomeIcon}/>home</button>
+				<Link to="../">
+					<button className={style.homeButton}><img src={HomeIcon}/>home</button>
+				</Link>
 			</header>
 			<div className={style.loginContainer}>		
 				<form className={style.loginForm}>
