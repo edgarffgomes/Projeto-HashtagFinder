@@ -12,8 +12,8 @@ import { Slider, Slide } from '../../components/slider/ExportPattern';
 const Home = () => {
   /* configuração do carrosel */
   const settings = {
-    spaceBetween: 50,
-    slidesPerView: 3,
+    spaceBetween: 44,
+    slidesPerView: 5,
     navigation: true,
     pagination: {
       clickable: true,
@@ -56,6 +56,33 @@ const Home = () => {
           </div>
 
           <Slider settings={settings}>
+            <Slide>
+              <div className={styles.bgImageGallery}>
+                <img
+                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                  alt="Teste"
+                  height="287px"
+                  width="287px"
+                />
+                <p>Postado por:</p>
+              </div>
+            </Slide>
+            <Slide>
+              <img
+                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                alt="Teste"
+                height="287px"
+                width="287px"
+              />
+            </Slide>
+            <Slide>
+              <img
+                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                alt="Teste"
+                height="287px"
+                width="287px"
+              />
+            </Slide>
             <Slide>
               <img
                 src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
