@@ -2,7 +2,7 @@ import styles from './About.module.css';
 import illustration from '../../img/about-illustration.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Members from '../../components/members/Members';
-
+import Footer from '../../components/footer/Footer';
  const About = () => {
   return (
     <>
@@ -38,6 +38,7 @@ import Members from '../../components/members/Members';
 
         <Members />
       </main>
+      <Footer/>
     </>
   );
 };
