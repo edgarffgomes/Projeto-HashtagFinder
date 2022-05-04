@@ -1,9 +1,12 @@
+/* CORRIGIR ESSA PARTE, POIS ESTÁ PEGANDO O BACKGROUND PARA TODAS AS PÁGINAS
 
-.container{
+body{
 	background-image: url("../../img/login-bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: Rubik;
+} */
+.container{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -92,3 +95,57 @@
 	letter-spacing: 0.57px;
 	cursor: pointer;
 }
+@media  screen and (max-width: 415px) {
+	.head{
+		margin-top: 33px;
+		height: 30px;
+		width: 382px;
+	}
+	.logo{
+		width: 130px;
+		height: 23px;
+		margin-left: 16px;
+	}
+	.homeButton{
+		margin-right: 16px;
+		padding: 10px;
+		width: 106px;
+		height: 30px;
+		font-size: 10px;
+		letter-spacing: 1.5px;
+		justify-content: center;
+	}
+	.homeButton img{
+		margin-right: 10px;
+		height: 9px;
+		width: 12px;
+	}
+	.loginContainer{
+		width: 340px;
+		height: 460px;
+		margin: 181px 37px;
+	}
+	.loginForm{
+		width: 272px;
+		margin-top: 62px;
+	}
+	.loginForm h3{
+		font-size: 34px;
+	}
+	.usernameSection, .passwordSection{
+		width: 272px;
+		height: 32px;
+	}
+	.usernameSection{
+		margin-top: 86px;
+	}
+	.passwordSection{
+		margin-top: 84px;
+	}
+	.accessButton{
+		margin-top: 40px;
+		width: 213px;
+		height: 58px;
+		font-size: 18px;
+	}
+} 
