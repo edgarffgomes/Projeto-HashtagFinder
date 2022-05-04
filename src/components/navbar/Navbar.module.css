@@ -1,41 +1,40 @@
-@import '../../css/Global.css';
+@import "../../css/Global.css";
 
- *{
+* {
   text-decoration: none;
- }
- 
+}
+
 /* ESTILIZA O CAMPO DE NAVEGAÇÃO */
-.bgNav{
-  height: 50px;
+.bgNav {
+  height: 3.125rem;
   width: 100%;
   background-color: transparent;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 65px;
+  padding: 2.5rem 4.0625rem;
   top: 0;
   left: 0;
 }
 
 /* ESTILIZA O TITULO DA NAVEGAÇÃO */
-.bgTitle h2{
+.bgTitle h2 {
   font-family: var(--fontMain);
   color: var(--titleOneColor);
-  font-size: 40px;
-
+  font-size: 2.5rem;
 }
 
 /* ESTILIZA O STRONG QUE ESTÁ DENTRO DO H2 */
-.bgTitle strong{
+.bgTitle strong {
   font-weight: bold;
 }
 
 /* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
-.bgButton button{
-  height: 50px;
-  width: 170px;
-  border-radius: 25px;
+.bgButton button {
+  height: 3.125rem;
+  width: 10.625rem;
+  border-radius: 1.5625rem;
   border: none;
   color: var(--titleOneColor);
   cursor: pointer;
@@ -43,20 +42,56 @@
 }
 
 /* BOTÃO SOBRE */
-.bgAbout{
+.bgAbout {
   background-color: var(--button-color);
-  margin-right: 35px ;
+  margin-right: 2.1875rem;
 }
 
-.bgAbout:hover{
-  background-color: var(--button-color-hover) ;
+.bgAbout:hover {
+  background-color: var(--button-color-hover);
 }
 
 /* BOTÃO LOGIN */
-.bgLogin{
+.bgLogin {
   background-color: var(--titleTwoColor);
 }
 
-.bgLogin:hover{
+.bgLogin:hover {
   background-color: var(--button-color-hover2);
+}
+
+/* MOBILE PARA A LISTA DE BUSCAS */
+@media (max-width: 414px) {
+  .bgNav {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3125rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .bgTitle h2 {
+    font-size: 1.4375rem;
+  }
+
+  .bgButton button {
+    width: 6.625rem;
+    height: 1.875rem;
+    font-size: 0.75rem;
+    margin-right: 0.875rem;
+  }
+
+  .bgButton .bgAbout {
+    margin-left: 1.75rem;
+  }
+
+  .bgButton .bgLogin {
+    margin-right: 0.1rem;
+  }
+
+  .bgButton {
+    display: flex;
+    flex-direction: row;
+  }
 }
