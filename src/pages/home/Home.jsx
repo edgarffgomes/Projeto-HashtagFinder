@@ -8,6 +8,7 @@ import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 /* CARROSEL */
 import { Slider, Slide } from '../../components/slider/ExportPattern';
+import Card from '../../components/tweetCard/Card';
 
 const Home = () => {
   /* configuração do carrosel */
@@ -54,76 +55,73 @@ const Home = () => {
           <div className={styles.bgDisplaySearch}>
             <h2>Exibindo os 10 resultados mais recentes para #natureza</h2>
           </div>
-
-          <Slider settings={settings}>
-            <Slide>
-              <div className={styles.bgImageGallery}>
+          <section>
+            <Slider settings={settings}>
+              <Slide>
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                </div>
+              </Slide>
+              <Slide>
                 <img
                   src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
                   alt="Teste"
                   height="287px"
                   width="287px"
                 />
-                <p>Postado por:</p>
-              </div>
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-            <Slide>
-              <img
-                src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                alt="Teste"
-                height="287px"
-                width="287px"
-              />
-            </Slide>
-          </Slider>
+              </Slide>
+              <Slide>
+                <img
+                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                  alt="Teste"
+                  height="287px"
+                  width="287px"
+                />
+              </Slide>
+              <Slide>
+                <img
+                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                  alt="Teste"
+                  height="287px"
+                  width="287px"
+                />
+              </Slide>
+              <Slide>
+                <img
+                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                  alt="Teste"
+                  height="287px"
+                  width="287px"
+                />
+              </Slide>
+              <Slide>
+                <img
+                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                  alt="Teste"
+                  height="287px"
+                  width="287px"
+                />
+              </Slide>
+            </Slider>
+          </section>
+          <section className={styles.flexCard}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </section>
         </main>
 
         <Footer />

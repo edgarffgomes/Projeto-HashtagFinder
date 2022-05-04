@@ -33,6 +33,7 @@ nav{
   color: var(--titleOneColor);
   width: 610px;
   margin-top: 30px;
+ /*  font-weight: bold; */
 }
 
 /* ESTILIZA O INPUT DE PESQUISA */
@@ -95,9 +96,18 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 }
 
 .bgDisplaySearch h2{
-  font-size: 32px;
-  font-family: var(--fontMain);
+  font: bold 2rem /44px 'Rubik', sans-serif;
+/*   font-size: 32px; */
   color: var(--titleTwoColor);
   letter-spacing: 0;
   margin-bottom: 114px;
+
+}
+
+/* ESTILIZAÇÃO DOS CARDS DE TWEETS */
+.flexCard{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 125px 187px;
 }
