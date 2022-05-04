@@ -63,11 +63,12 @@
 /* MOBILE PARA A LISTA DE BUSCAS */
 @media (max-width: 414px) {
   .bgNav {
-    padding: 1rem 2.3125rem;
+    padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 1.3125rem;
     width: 100%;
+    text-align: center;
   }
 
   .bgTitle h2 {

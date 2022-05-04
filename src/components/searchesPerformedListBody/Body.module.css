@@ -83,11 +83,11 @@
 
 @media (max-width: 414px) {
   .title {
-    width: 18.625rem;
+    width: 100%;
     height: 2.4375rem;
 
-    margin-left: 3rem;
-    margin-bottom: 3.0625rem;
+    text-align: center;
+    display: block;
   }
 
   .table-header {
