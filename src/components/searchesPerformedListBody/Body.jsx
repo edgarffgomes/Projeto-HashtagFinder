@@ -14,118 +14,13 @@ const Body = () => {
         </div>
         <div className={styles["table-body"]}>
           <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
+            <span className={styles.hashName}>#HashTagName</span>
+            <div className={styles.date}>
+              <span>25/02</span>
+              <span>09:30</span>
+            </div>
           </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
-          <div className={styles.divisor}></div>
-          <div className={styles["table-body-line"]}>
-            <span>#HashTagName</span>
-            <span>25/02</span>
-            <span>09:30</span>
-          </div>
+         
         </div>
       </div>
     </main>

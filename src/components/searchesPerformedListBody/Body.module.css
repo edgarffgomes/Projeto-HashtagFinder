@@ -1,4 +1,4 @@
-@import "../../css/Global.css";
+/* @import '../../css/Global.css'; */
 .title {
   font-family: var(--fontMain);
   color: var(--titleOneColor);
@@ -7,10 +7,15 @@
 }
 
 .table-container {
-  width: auto;
+  /* antes width: auto; 
+  margin-top:2.5rem   */ 
   border-radius: 0.875rem;
   background-color: var(--background-color-list-header);
-  margin-top: 2.5rem;
+  width: 90%;
+  /* margin:10rem auto auto auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
 }
 
 .table-header {
@@ -34,10 +39,12 @@
   max-width: 72%;
 }
 
+/* 
+antes
 .table-header span + span {
   min-width: 14%;
   max-width: 14%;
-}
+} */
 
 .table-body {
   background-color: var(--background-color-list-body);
@@ -52,13 +59,29 @@
   font-family: var(--fontMain);
   font-size: 1.3rem;
   display: flex;
-  width: 100%;
-
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
   padding-top: 1.5rem;
-  padding-left: 3.5rem;
   padding-bottom: 1.3rem;
+  /* border: solid black 2px; */
+  /* antes
+   width: 100%;
+   padding-left:3.5rem;*/
 }
 
+.date {
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px blue;
+  width: 20%;
+  min-width: 105px;
+  max-width: 151px;
+  padding: auto;
+  color: var(--search-list-text-color);
+}
+
+/* antes
 .table-body-line span:first-child {
   min-width: 71.8%;
   max-width: 71.8%;
@@ -67,13 +90,13 @@
 .table-body-line span + span {
   min-width: 14%;
   max-width: 14%;
-}
+} */
 
-.table-body-line span + span {
+/* .table-body-line span + span {
   color: var(--search-list-text-color);
-}
+} */
 
-.table-body .divisor {
+/* .table-body .divisor {
   content: "";
   flex: 1;
   height: 1px;
@@ -81,7 +104,7 @@
   margin-bottom: 3.0625rem;
   margin: 0 1rem;
 }
-
+antes
 @media (max-width: 414px) {
   .title {
     width: 100%;
@@ -108,7 +131,6 @@
     padding-left: 1rem;
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
-
     font-size: 1rem;
     line-height: 1.1875rem;
   }
@@ -131,4 +153,4 @@
     min-width: 20%;
     max-width: 20%;
   }
-}
+} */
