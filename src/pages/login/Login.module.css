@@ -1,11 +1,9 @@
-/* CORRIGIR ESSA PARTE, POIS ESTÁ PEGANDO O BACKGROUND PARA TODAS AS PÁGINAS
-
-body{
+body .container{
 	background-image: url("../../img/login-bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: Rubik;
-} */
+}
 .container{
 	display: flex;
 	flex-direction: column;
