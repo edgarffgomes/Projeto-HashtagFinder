@@ -1,5 +1,8 @@
-.bgHeader nav {
+@import '../../components/navbar/Navbar.module.css';
+
+.bgNavbar{
   position: absolute;
+
 }
 
 .bgAbout {

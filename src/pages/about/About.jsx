@@ -7,29 +7,45 @@ import Footer from '../../components/footer/Footer';
 /* ICONES DO NAVBAR */
 import iconLogin from '../../img/icon-user-alt.svg';
 import iconHome from '../../img/icon-home.svg';
+import React, { useEffect, useState } from 'react';
 
 const About = () => {
+  /* configuração do navbar */
+  const [ativaNav, setAtivaNav] = useState(false);
+
+  useEffect(function () {
+    function posicaoScroll() {
+      if (window.scrollY > 410) {
+        setAtivaNav(true);
+      } else {
+        setAtivaNav(false);
+      }
+    }
+    window.addEventListener('scroll', posicaoScroll);
+  }, []);
+
   return (
     <>
+      <Navbar
+        acao={ativaNav}
+        buttons={[
+          {
+            route: '/',
+            icon: iconHome,
+            title: 'home',
+            backgroundColor: ' #d842bd',
+            textColor: '#ffff',
+          },
+          {
+            route: '/login',
+            icon: iconLogin,
+            title: 'LOGIN',
+            backgroundColor: ' #3634f7',
+            textColor: '#ffff',
+          },
+        ]}
+      />
       <header className={styles.bgHeader}>
-        <Navbar
-          buttons={[
-            {
-              route: '/',
-              icon: iconHome,
-              title: 'home',
-              backgroundColor: ' #d842bd',
-              textColor: '#ffff',
-            },
-            {
-              route: '/login',
-              icon: iconLogin,
-              title: 'LOGIN',
-              backgroundColor: ' #3634f7',
-              textColor: '#ffff',
-            },
-          ]}
-        />
         <div className={styles.bgAbout}>
           <h1 className={styles.bgTitle}>Sobre o projeto</h1>
         </div>

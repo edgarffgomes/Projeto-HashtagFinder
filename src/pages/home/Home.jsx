@@ -19,7 +19,7 @@ const Home = () => {
 
   useEffect(function () {
     function posicaoScroll() {
-      if (window.scrollY > 650) {
+      if (window.scrollY > 750) {
         setAtivaNav(true);
       } else {
         setAtivaNav(false);

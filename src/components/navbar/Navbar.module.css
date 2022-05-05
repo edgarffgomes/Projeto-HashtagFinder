@@ -16,6 +16,7 @@
   padding: 2.5rem 4.0625rem;
   top: 0;
   left: 0;
+  position: absolute;
 }
 
 /* ATIVAÇÃO DO NAVBAR */
