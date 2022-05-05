@@ -69,9 +69,7 @@
   min-width: 14%;
   max-width: 14%;
   width: 100%;
-}
 
-.table-body-line span + span {
   color: var(--search-list-text-color);
 }
 
@@ -91,6 +89,11 @@
 
     text-align: center;
     display: block;
+  }
+
+  .table-container {
+    width: 90%;
+    margin: 3rem auto;
   }
 
   .table-header {
