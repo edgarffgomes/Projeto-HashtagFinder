@@ -3,28 +3,23 @@
 }
 
 .main-container {
-  /* antes 
-  padding: 9.375rem 11.5rem 5.3125rem 11.5rem;
-  min-height: 100vh;
+  padding: 7.5rem 11.5rem 5.3125rem 11.5rem;
   min-width: 100vw;
   min-height: 100vh;
-  */
-  width: 100%;
-  height: 100vh;
-  margin: auto;
+
   background-image: url("../../img/login-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 850px) {
   .bgNav {
     font-size: 0.875rem;
     min-width: 25.875rem;
   }
 
   .main-container {
-    min-width: 25.875rem;
+    min-width: 20.875rem;
     padding: 8rem 0.5625rem 0 0.5625rem;
   }
 }
