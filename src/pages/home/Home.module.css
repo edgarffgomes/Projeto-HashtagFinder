@@ -1,7 +1,7 @@
 @import '../../css/Global.css';
 
-nav{
-  position: fixed;
+.bgNavbar nav{
+  position: absolute;
 }
 
 /* CORPO DO CABEÇALHO */
@@ -110,4 +110,31 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 125px 187px;
+}
+
+/* ESTILIZAÇÃO DA GALERIA */
+.bgImageGallery img{
+  box-shadow: 8px 14px 30px var(--color-box-shadow);
+  border-radius: 21px;
+}
+
+.bgImageGallery p{
+  position: absolute;
+  top: 0;
+  padding-top: 215px;
+  padding-left: 20px;
+  color: var(--titleOneColor);
+  font: normal normal normal 17px/19px Rubik;
+  text-align: left;
+}
+
+.bgImageGallery span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 240px;
+  padding-left: 20px;
+  color: var(--titleOneColor);
+  font: 21px/23px var(--fontMain);
+  text-align: left;
 }

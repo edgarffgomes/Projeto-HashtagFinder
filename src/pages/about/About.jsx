@@ -3,11 +3,33 @@ import illustration from '../../img/about-illustration.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Members from '../../components/members/Members';
 import Footer from '../../components/footer/Footer';
- const About = () => {
+
+/* ICONES DO NAVBAR */
+import iconLogin from '../../img/icon-user-alt.svg';
+import iconHome from '../../img/icon-home.svg';
+
+const About = () => {
   return (
     <>
-      <header>
-        <Navbar />
+      <header className={styles.bgHeader}>
+        <Navbar
+          buttons={[
+            {
+              route: '/',
+              icon: iconHome,
+              title: 'home',
+              backgroundColor: ' #d842bd',
+              textColor: '#ffff',
+            },
+            {
+              route: '/login',
+              icon: iconLogin,
+              title: 'LOGIN',
+              backgroundColor: ' #3634f7',
+              textColor: '#ffff',
+            },
+          ]}
+        />
         <div className={styles.bgAbout}>
           <h1 className={styles.bgTitle}>Sobre o projeto</h1>
         </div>
@@ -38,8 +60,8 @@ import Footer from '../../components/footer/Footer';
 
         <Members />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };
-export default About
+export default About;

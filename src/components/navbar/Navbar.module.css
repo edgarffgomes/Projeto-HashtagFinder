@@ -30,25 +30,35 @@
   font-weight: bold;
 }
 
+
 /* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
 .bgButton button {
   height: 3.125rem;
   width: 10.625rem;
   border-radius: 1.5625rem;
+}
+
+/* CONFIGURAÇÕES PADRÃO DOS BOTÕES */
+.bgButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgButton button{
+  height: 50px;
+  width: 170px;
+  border-radius: 25px;
   border: none;
-  color: var(--titleOneColor);
   cursor: pointer;
   transition: 0.5s;
-}
-
-/* BOTÃO SOBRE */
-.bgAbout {
-  background-color: var(--button-color);
-  margin-right: 2.1875rem;
-}
-
-.bgAbout:hover {
-  background-color: var(--button-color-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontMain);
+  font-weight: bold;
+  letter-spacing: 2.55px;
+  text-transform: uppercase;
 }
 
 /* BOTÃO LOGIN */
@@ -95,3 +105,12 @@
     flex-direction: row;
   }
 }
+
+.bgButton a:first-child {
+  margin-right: 35px;
+}
+
+.bgButton img{
+  margin-right: 14px;
+}
+

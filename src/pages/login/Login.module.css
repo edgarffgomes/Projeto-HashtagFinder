@@ -1,3 +1,7 @@
+.container nav {
+	position: absolute;
+}
+
 body .container{
 	background-image: url("../../img/login-bg.jpg");
 	background-size: cover;
