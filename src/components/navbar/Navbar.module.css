@@ -61,7 +61,7 @@
 }
 
 /* MOBILE PARA A LISTA DE BUSCAS */
-@media (max-width: 414px) {
+@media (max-width: 690px) {
   .bgNav {
     padding: 0;
     display: flex;

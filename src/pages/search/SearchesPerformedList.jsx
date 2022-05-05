@@ -6,7 +6,7 @@ import "./SearchesPerformedList.css";
 const SearchesPerformedList = () => {
   return (
     <div className='bgNav'>
-      <Navbar />
+      <Navbar fButton='HOME' sButton='SAIR' />
       <div className='main-container'>
         <Body />
       </div>

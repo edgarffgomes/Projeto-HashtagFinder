@@ -12,7 +12,7 @@
   background-size: cover;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 850px) {
   .bgNav {
     font-size: 0.875rem;
     min-width: 25.875rem;
