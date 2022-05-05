@@ -1,8 +1,10 @@
 @import '../../css/Global.css';
 
+/* NAVBAR */
 .bgNavbar nav{
   position: absolute;
 }
+
 
 /* CORPO DO CABEÇALHO */
 .bgHeader{
@@ -10,7 +12,7 @@
   width: 100%;
   background-image: url('../../img/hero-bg.jpg');
   background-size: cover;
-  box-shadow: inset 0 -120px var(--titleOneColor);
+  box-shadow: inset 0 -40px var(--titleOneColor);
 }
 
 /* ESTILIZA OS TEXTOS DO CABEÇALHO */
@@ -21,7 +23,7 @@
 
 .bgTitle h1 {
   font-size: 82px;
-  width: 800px;
+  width: 804px;
   color: var(--titleOneColor);
   font-family: var(--fontMain);
   font-weight: bold;
@@ -31,7 +33,7 @@
   font-size: 31px;
   font-family: var(--fontMain);
   color: var(--titleOneColor);
-  width: 610px;
+  width: 608px;
   margin-top: 30px;
  /*  font-weight: bold; */
 }
@@ -41,7 +43,7 @@
   width: 50%;
   background-color: var(--titleOneColor);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 185px;
   border-radius: 72px;
   display: flex;
   align-items: center;
@@ -87,7 +89,7 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   width: 100%;
   display: block;
   justify-content: center;
-  margin-top: 50px;
+  margin-top:185px;
 }
 
 .bgDisplaySearch{
@@ -137,4 +139,100 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   color: var(--titleOneColor);
   font: 21px/23px var(--fontMain);
   text-align: left;
+}
+
+/* RESPONSIVO HOME DESKTOP */
+@media screen and (max-width: 1112px) {
+  .bgSearch{
+    width: 70%;
+  }
+  .bgTitle h1,
+  .bgTitle p{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 906px) {
+ .bgTitle{
+   margin-left: 0;
+ }
+}
+
+/* RESPONSIVO TABLET */
+@media screen and (max-width: 768px) {
+  .bgHeader{
+    box-shadow: none;
+    height: 620px; 
+  }
+  .bgTitle{
+    margin-left: 120px;
+    margin-top: 90px;
+  }
+  .bgTitle h1{
+    font-size: 66px;
+  }
+  .bgTitle p{
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 741px) and (max-width: 768px){
+  .bgTitle h1{
+    font-size: 82px;
+  }
+  .bgTitle p{
+    font-size: 31px;
+  }
+
+  .bgSearch{
+    margin-top: 130px;
+  }
+}
+
+/* RESPONSIVO HOME MOBILE */
+@media screen and (max-width: 580px) {
+  /* BACKGROUND DO HEADER */
+  .bgHeader {
+    height: 520px;
+    box-shadow: none;
+    background-image: url('../../img/hero-bg-mobile.jpg');
+  }
+  /* BACKGROUND DO TITULO*/
+  .bgTitle {
+    margin-top: 135px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* TITULO DO HEADER */
+  .bgTitle h1 {
+    font-size: 36px;
+    width: 70%;
+    height: 82px;
+  }
+  /* SUBTITULO DO HEADER */
+  .bgTitle p {
+    font: normal normal normal 16px/22px Rubik;
+    width: 70%;
+  }
+  /* CAMPO DE BUSCA DO HEADER */
+  .bgSearch{
+    width: 90%;
+    height: 51px;
+    margin-top: 72px;
+  }
+  /* IMAGEM DO CAMPO DE BUSCA */
+  .bgImageSearch{
+    padding: 8px 15px;
+  }
+
+  .bgImageSearch img{
+   width: 20px;
+   height: 15px;
+  }
+  /* INPUT DO CAMPO DE BUSCA */
+  .bgInputSearch input{
+    font-size: 17px;
+  }
 }

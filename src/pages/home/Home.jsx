@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 /* CSS */
 import styles from './Home.module.css';
 /* COMPONENTES */
@@ -14,6 +14,20 @@ import { Slider, Slide } from '../../components/slider/ExportPattern';
 import Card from '../../components/tweetCard/Card';
 
 const Home = () => {
+  /* configuração do navbar */
+  const [ativaNav, setAtivaNav] = useState(false);
+
+  useEffect(function () {
+    function posicaoScroll() {
+      if (window.scrollY > 650) {
+        setAtivaNav(true);
+      } else {
+        setAtivaNav(false);
+      }
+    }
+    window.addEventListener('scroll', posicaoScroll);
+  }, []);
+
   /* configuração do carrosel */
   const settings = {
     spaceBetween: 44,
@@ -28,6 +42,7 @@ const Home = () => {
       <Container>
         <div className={styles.bgNavbar}>
           <Navbar
+            acao={ativaNav}
             buttons={[
               {
                 route: '/about',

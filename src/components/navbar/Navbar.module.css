@@ -18,6 +18,23 @@
   left: 0;
 }
 
+/* ATIVAÇÃO DO NAVBAR */
+.ativaNav nav{
+  position: fixed;
+}
+
+.ativaNav .bgNav{
+  background-color: rgba( 255, 255, 255, 0.35 );
+  backdrop-filter: blur( 13.5px );
+  box-shadow: 8px 14px 30px var(--color-box-shadow);
+  z-index: 200;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.ativaNav .bgTitle h2{
+  color: var(--button-color);
+}
+
 /* ESTILIZA O TITULO DA NAVEGAÇÃO */
 .bgTitle h2 {
   font-family: var(--fontMain);
@@ -28,14 +45,6 @@
 /* ESTILIZA O STRONG QUE ESTÁ DENTRO DO H2 */
 .bgTitle strong {
   font-weight: bold;
-}
-
-
-/* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
-.bgButton button {
-  height: 3.125rem;
-  width: 10.625rem;
-  border-radius: 1.5625rem;
 }
 
 /* CONFIGURAÇÕES PADRÃO DOS BOTÕES */
@@ -61,56 +70,69 @@
   text-transform: uppercase;
 }
 
-/* BOTÃO LOGIN */
-.bgLogin {
-  background-color: var(--titleTwoColor);
-}
-
-.bgLogin:hover {
-  background-color: var(--button-color-hover2);
-}
-
-/* MOBILE PARA A LISTA DE BUSCAS */
-@media (max-width: 414px) {
-  .bgNav {
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-top: 1.3125rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  .bgTitle h2 {
-    font-size: 1.4375rem;
-  }
-
-  .bgButton button {
-    width: 6.625rem;
-    height: 1.875rem;
-    font-size: 0.75rem;
-    margin-right: 0.875rem;
-  }
-
-  .bgButton .bgAbout {
-    margin-left: 1.75rem;
-  }
-
-  .bgButton .bgLogin {
-    margin-right: 0.1rem;
-  }
-
-  .bgButton {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-.bgButton a:first-child {
+.bgButton a:first-child{
   margin-right: 35px;
 }
 
-.bgButton img{
-  margin-right: 14px;
+.bgButton img {
+  margin-right: 8px;
+}
+ 
+  /* RESPONSIVO NAVBAR DESKTOP */
+@media screen and (max-width: 1112px) {
+
+  /* CAMPO DE NAVEGAÇÃO */
+  .bgNav{
+    padding: 40px;
+  }
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2{
+    font-size: 40px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 50px;
+    width: 170px;
+    font-size: 10px;
+  }
+  /* PRIMEIRO BOTÃO DA NAVBAR */
+  .bgButton a:first-child{
+    margin-right: 15px;
+  }
+  /* ICONES DA NAVBAR */
+  .bgButton button img {
+    margin-right: 8px;
+  }
 }
 
+/* RESPONSIVO NAVBAR TABLET  */
+@media screen and (max-width: 800px){
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2 {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 40px;
+    width: 130px;
+  }
+}
+
+/* RESPONSIVO NAVBAR MOBILE */
+@media screen and (max-width: 540px) {
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2 {
+    font-size: 19px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 30px;
+    width: 106px;
+  }
+  /* ICONES DA NAVEGAÇÃO */
+  .bgButton img {
+    height: 8px;
+    width: 8px;
+  }
+} 
