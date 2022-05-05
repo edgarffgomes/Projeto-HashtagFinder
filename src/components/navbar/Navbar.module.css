@@ -30,13 +30,14 @@
   font-weight: bold;
 }
 
-<<<<<<< HEAD
+
 /* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
 .bgButton button {
   height: 3.125rem;
   width: 10.625rem;
   border-radius: 1.5625rem;
-=======
+}
+
 /* CONFIGURAÇÕES PADRÃO DOS BOTÕES */
 .bgButton{
   display: flex;
@@ -48,7 +49,6 @@
   height: 50px;
   width: 170px;
   border-radius: 25px;
->>>>>>> alexandre
   border: none;
   cursor: pointer;
   transition: 0.5s;
@@ -59,17 +59,6 @@
   font-weight: bold;
   letter-spacing: 2.55px;
   text-transform: uppercase;
-}
-
-<<<<<<< HEAD
-/* BOTÃO SOBRE */
-.bgAbout {
-  background-color: var(--button-color);
-  margin-right: 2.1875rem;
-}
-
-.bgAbout:hover {
-  background-color: var(--button-color-hover);
 }
 
 /* BOTÃO LOGIN */
@@ -116,7 +105,7 @@
     flex-direction: row;
   }
 }
-=======
+
 .bgButton a:first-child {
   margin-right: 35px;
 }
@@ -124,4 +113,4 @@
 .bgButton img{
   margin-right: 14px;
 }
->>>>>>> alexandre
+
