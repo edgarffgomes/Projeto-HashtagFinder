@@ -47,7 +47,7 @@
 
 .socialIcons {
   display: grid;
-  grid-template-columns: 0.1fr 0.1fr 0.1fr;
+  grid-template-columns: repeat(3, 0.1fr);
   gap: 32.65px;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 450px) {
   .gridContainer {
     grid-template-columns: 1fr;
     gap: 46px;
@@ -78,12 +78,19 @@
     margin-top: 36px;
   }
 
+  .title {
+    font: bold 1.57143rem/29px 'Rubik', sans-serif;
+  }
+
   .name {
     margin: 22px auto 24px auto;
+    font: bold 2rem/31px 'Rubik', sans-serif;
+
   }
 
   .paragraphResume {
     margin-bottom: 22.14px;
+    font:  1.35714rem/25px 'Rubik', sans-serif;
   }
 
   .socialIcons {

@@ -1,34 +1,33 @@
-.bgHeader nav{
+.bgHeader nav {
   position: absolute;
 }
 
 .bgAbout {
   display: flex;
-  background: url(../../img/about-bg.jpg) center center/cover no-repeat fixed;
+  background: url(../../img/about-bg.jpg) center center/cover no-repeat padding-box;
   width: 100%;
 }
 
 .bgTitle {
   font: bold 5.125rem/90px 'Rubik', sans-serif;
   color: white;
-  margin: 250px 0px 74px 140px;
-  border: solid 2px black;
+  width: 85%;
+  margin: 250px auto 74px auto;
 }
 
 .container {
-  display: flex;
-  margin: 193px auto 183px auto;
-  border: solid blue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   width: 85%;
-  justify-content: space-between;
+  margin: 193px auto 183px auto;
+  justify-content: center;
+  gap: 50px;
 }
 
 .paragraph {
-  min-width: 500px;
-  width: 754px;
-  font: 1.668rem /44px 'Rubik', sans-serif;
+  max-width: 753px;
+  font: 1.5625rem /35px 'Rubik', sans-serif;
   color: var(--paragraphColor);
-  /* border: 4px solid red; */
 }
 
 .paragraphTitle {
@@ -37,50 +36,68 @@
   margin-bottom: 25px;
 }
 
+.containerIllustration {
+  max-width: 637.52px;
+}
+
 .illustration {
-  max-width: 637px;
-  min-width: 500px;
-  /* border: 4px solid rebeccapurple; */
+  width: 100%;
+  min-height: 100%;
 }
 
 /* Responsivo */
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1112px) {
   .container {
-    width: 100%;
-    align-items: center;
+    grid-template-columns: 1fr;
+    margin-top: 120px;
+  }
+
+  .bgTitle {
+    font-size: 3.7rem;
   }
 
   .paragraph {
-    min-width: 679px;
+    font: 1.325rem/25px 'Rubik', sans-serif;
+  }
+
+  .paragraph,
+  .containerIllustration {
+    max-width: unset;
+  }
+
+  .containerIllustration {
+    display: flex;
+    justify-content: center;
   }
 
   .illustration {
-    border: 4px solid rebeccapurple;
-    width: 100%;
-    min-width: 420px;
-    align-self: flex-end;
+    width: 90%;
+    max-width: 650px;
   }
 }
 
-/* Mobile e Tablet */
-
-@media screen and (max-width: 1112px) {
+@media screen and (max-width: 450px) {
   .bgTitle {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 4.5rem;
+    width: 100%;
+    font: bold 2.357143rem/36px 'Rubik', sans-serif;
+    margin: 109px auto 58px auto;
+    text-align: center;
   }
+
   .container {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 55px auto 112px auto;
+    margin-top: 55px;
   }
+
   .paragraph {
-    margin-bottom: 46px;
-    min-width: unset;
+    font: 1.07143rem/21px 'Rubik', sans-serif;
   }
+
+  .paragraphTitle {
+    font: bold 1.57143rem/29px 'Rubik', sans-serif;
+  }
+
   .illustration {
-    min-width: unset;
+    max-width: 298px;
   }
 }
