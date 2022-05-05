@@ -1,6 +1,6 @@
 import styles from './About.module.css';
 import illustration from '../../img/about-illustration.svg';
-// import Navbar from '../../components/navbar/Navbar';
+import Navbar from '../../components/navbar/Navbar';
 import Members from '../../components/members/Members';
 import Footer from '../../components/footer/Footer';
 
@@ -12,7 +12,7 @@ const About = () => {
   return (
     <>
       <header className={styles.bgHeader}>
-        {/* <Navbar
+        <Navbar
           buttons={[
             {
               route: '/',
@@ -29,7 +29,7 @@ const About = () => {
               textColor: '#ffff',
             },
           ]}
-        /> */}
+        />
         <div className={styles.bgAbout}>
           <h1 className={styles.bgTitle}>Sobre o projeto</h1>
         </div>
