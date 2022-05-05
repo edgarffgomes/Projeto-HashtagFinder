@@ -1,8 +1,6 @@
 import React from 'react';
-import Logo from '../../img/logo-white.svg';
-import HomeIcon from '../../img/icon-home.svg';
 import style from './Login.module.css';
-import { Link } from 'react-router-dom';
+
 
 /* NAVBAR */
 import Navbar from '../../components/navbar/Navbar';
