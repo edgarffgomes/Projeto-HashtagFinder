@@ -26,24 +26,26 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Navbar
-          buttons={[
-            {
-              route: '/about',
-              icon: iconAbout,
-              title: 'SOBRE',
-              backgroundColor: ' #d842bd',
-              textColor: '#ffff',
-            },
-            {
-              route: '/login',
-              icon: iconLogin,
-              title: 'LOGIN',
-              backgroundColor: ' #3634f7',
-              textColor: '#ffff',
-            },
-          ]}
-        />
+        <div className={styles.bgNavbar}>
+          <Navbar
+            buttons={[
+              {
+                route: '/about',
+                icon: iconAbout,
+                title: 'SOBRE',
+                backgroundColor: ' #d842bd',
+                textColor: '#ffff',
+              },
+              {
+                route: '/login',
+                icon: iconLogin,
+                title: 'LOGIN',
+                backgroundColor: ' #3634f7',
+                textColor: '#ffff',
+              },
+            ]}
+          />
+        </div>
         {/* background do cabeçalho */}
         <header className={styles.bgHeader}>
           {/* background do titulo */}

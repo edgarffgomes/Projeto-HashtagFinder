@@ -1,7 +1,7 @@
 @import '../../css/Global.css';
 
-nav{
-  position: fixed;
+.bgNavbar nav{
+  position: absolute;
 }
 
 /* CORPO DO CABEÇALHO */

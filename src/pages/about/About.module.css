@@ -1,3 +1,7 @@
+.bgHeader nav{
+  position: absolute;
+}
+
 .bgAbout {
   display: flex;
   background: url(../../img/about-bg.jpg) center center/cover no-repeat fixed;
