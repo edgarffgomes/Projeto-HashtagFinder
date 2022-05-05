@@ -1,5 +1,6 @@
 .swiper{
-  padding-left: 50px;
+  padding: 0 0 50px 50px;
+/*   padding-left: 50px; */
 }
 
 .swiper-slider{
@@ -23,9 +24,16 @@
    margin: 0;
  } */
 
+ .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
 .swiper-pagination-bullet-active{
-  background-color: #718096;
+  bottom: 0px;
 }
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+ width: 15px;
+ height: 15px;
+}
+
 
 .swiper-button-prev{
   color: transparent;

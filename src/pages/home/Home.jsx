@@ -6,6 +6,9 @@ import Container from '../../components/container/Container';
 import IconSearch from '../../img/icon-search.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
+/* ICONES IMPORTADOS */
+import iconAbout from '../../img/icon-info-circle.svg';
+import iconLogin from '../../img/icon-user-alt.svg';
 /* CARROSEL */
 import { Slider, Slide } from '../../components/slider/ExportPattern';
 import Card from '../../components/tweetCard/Card';
@@ -23,7 +26,24 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Navbar fButton="SOBRE" sButton="LOGIN" />
+        <Navbar
+          buttons={[
+            {
+              route: '/about',
+              icon: iconAbout,
+              title: 'SOBRE',
+              backgroundColor: ' #d842bd',
+              textColor: '#ffff',
+            },
+            {
+              route: '/login',
+              icon: iconLogin,
+              title: 'LOGIN',
+              backgroundColor: ' #3634f7',
+              textColor: '#ffff',
+            },
+          ]}
+        />
         {/* background do cabeçalho */}
         <header className={styles.bgHeader}>
           {/* background do titulo */}
@@ -66,47 +86,68 @@ const Home = () => {
                     width="287px"
                   />
                   <p>Postado por:</p>
+                  <span>@tweetusername</span>
                 </div>
               </Slide>
               <Slide>
-                <img
-                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                  alt="Teste"
-                  height="287px"
-                  width="287px"
-                />
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                  <span>@tweetusername</span>
+                </div>
               </Slide>
               <Slide>
-                <img
-                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                  alt="Teste"
-                  height="287px"
-                  width="287px"
-                />
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                  <span>@tweetusername</span>
+                </div>
               </Slide>
               <Slide>
-                <img
-                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                  alt="Teste"
-                  height="287px"
-                  width="287px"
-                />
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                  <span>@tweetusername</span>
+                </div>
               </Slide>
               <Slide>
-                <img
-                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                  alt="Teste"
-                  height="287px"
-                  width="287px"
-                />
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                  <span>@tweetusername</span>
+                </div>
               </Slide>
               <Slide>
-                <img
-                  src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                  alt="Teste"
-                  height="287px"
-                  width="287px"
-                />
+                <div className={styles.bgImageGallery}>
+                  <img
+                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
+                    alt="Teste"
+                    height="287px"
+                    width="287px"
+                  />
+                  <p>Postado por:</p>
+                  <span>@tweetusername</span>
+                </div>
               </Slide>
             </Slider>
           </section>

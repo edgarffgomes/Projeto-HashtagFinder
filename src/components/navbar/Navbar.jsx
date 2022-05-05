@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ fButton, sButton }) => {
+export default function Navbar({ buttons }) {
   return (
     <nav className={styles.bgNav}>
       <div className={styles.bgTitle}>
@@ -14,16 +14,26 @@ const Navbar = ({ fButton, sButton }) => {
         </Link>
       </div>
       <div className={styles.bgButton}>
-        <Link to="/about">
-          <button className={styles.bgAbout}>{fButton}</button>
-        </Link>
+        {buttons.map((button) => {
+          /* ESTILIZAÇÃO DO BOTÃO */
 
-        <Link to="/login">
-          <button className={styles.bgLogin}>{sButton}</button>
-        </Link>
+          let buttonColor = {
+            backgroundColor: button.backgroundColor,
+            color: button.textColor,
+            minWidth: button.minWidth,
+            margin: button.margin,
+            hover: button.hover,
+          };
+          return (
+            <Link key={button.route} to={button.route}>
+              <button className={styles.bgButtonSelected} style={buttonColor}>
+                <img src={button.icon} alt="info-icon" />
+                {button.title}
+              </button>
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
