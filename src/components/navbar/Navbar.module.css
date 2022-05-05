@@ -31,32 +31,33 @@
   font-weight: bold;
 }
 
-/* ESTILIZA OS BOTÕES DA NAVEGAÇÃO */
+/* CONFIGURAÇÕES PADRÃO DOS BOTÕES */
+.bgButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bgButton button{
   height: 50px;
   width: 170px;
   border-radius: 25px;
   border: none;
-  color: var(--titleOneColor);
   cursor: pointer;
   transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontMain);
+  font-weight: bold;
+  letter-spacing: 2.55px;
+  text-transform: uppercase;
 }
 
-/* BOTÃO SOBRE */
-.bgAbout{
-  background-color: var(--button-color);
-  margin-right: 35px ;
+.bgButton a:first-child {
+  margin-right: 35px;
 }
 
-.bgAbout:hover{
-  background-color: var(--button-color-hover) ;
-}
-
-/* BOTÃO LOGIN */
-.bgLogin{
-  background-color: var(--titleTwoColor);
-}
-
-.bgLogin:hover{
-  background-color: var(--button-color-hover2);
+.bgButton img{
+  margin-right: 14px;
 }
