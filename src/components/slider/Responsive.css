@@ -1,68 +1,46 @@
+
 /* RESPONSIVO DESKTOP */
-@media screen and (min-width: 1112px) and (max-width: 1600px) {
-  .swiper-backface-hidden .swiper-slide img{
-    width: 195px;
-    height: 250px;
-  }
-  .swiper-backface-hidden .swiper-slide p{
-    padding-top: 180px;
-    padding-left: 10px;
-  }
-  .swiper-backface-hidden .swiper-slide span{
-    padding-top: 200px;
-    padding-left: 10px;
+/* @media screen and (min-width: 1501) and (max-width: 2000px){
+
+  .swiper{
+    padding: 114px 20px;
   }
 }
+/* and (min-width: 768px)  */
+ /*@media screen and (max-width: 1500px) {
 
-/* RESPONSIVO TABLET */
-@media screen and (min-width: 768px) and (max-width: 1112px) {
+  .swiper{
+    padding: 114px 0;
+   
+   }
+
   .swiper-container{
-    width: 1112px;
+    width: 1500px;
   }
 
-  .swiper-backface-hidden .swiper-slide img{
-    width: 130px;
+ .swiper-backface-hidden .swiper-slide img{
+    width: 300px;
     height: 250px;
   }
-  .swiper-backface-hidden .swiper-slide p{
-    padding-top: 180px;
-    padding-left: 10px;
-    font-size: 14px;
-  }
-  .swiper-backface-hidden .swiper-slide span{
-    padding-top: 200px;
-    padding-left: 10px;
-    font-size: 14px;
-  }
-}
 
-/* RESPONSIVO TABLET 2*/
-@media screen and (min-width: 550px) and (max-width: 768px) {
-  .swiper-container{
-    width: 768px;
-  }
-  .swiper-backface-hidden .swiper-slide img{
-    width: 287px;
-    height: 287px;
-  }
-  .swiper-backface-hidden .swiper-slide p{
-    padding-top: 180px;
-    padding-left: 10px;
-    font-size: 14px;
-  }
-  .swiper-backface-hidden .swiper-slide span{
-    padding-top: 200px;
-    padding-left: 10px;
-    font-size: 14px;
-  }
-/*  .swiper-slide-active{ 
-    width: 200.6px;
-    margin-right: 150px;
 } */
-}
+ 
+/* RESPONSIVO TABLET */
+/* and  (max-width: 1160px)  */
 
 /* RESPONSIVO MOBILE */
-@media screen and (min-width: 414px) and (max-width: 480px) {
+ /*@media screen and (max-width: 480px) {
+
+  
+
+  .swiper {
+   padding: 50px 50px;
+  }
+
+  .swiper-container{
+    width: 100px;
+  }
+
   .swiper-container{
     width: 160px;
   }
@@ -72,5 +50,25 @@
   }
   .swiper-slide{
     width: 287px;
+  } 
+}*/
+
+/* and (min-width: 375px ) */
+@media screen and (max-width: 480px) {
+  .swiper-backface-hidden .swiper-slide img{
+    width: 150px;
+    height: 250px;
+    margin-left: auto;
+  }
+  .swiper-button-prev,
+  .swiper-button-disabled{
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .swiper-backface-hidden .swiper-slide img{
+    width: 100px;
+    height: 250px;
   }
 }

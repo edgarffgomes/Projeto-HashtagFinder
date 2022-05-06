@@ -1,11 +1,9 @@
 @import './Responsive.css';
 
-.swiper-container{
-  /* width: 500px; */
-}
-
 .swiper{
-  padding: 0 0 50px 50px;
+ padding-bottom: 117px;
+ margin-left: 157px;
+ margin-right: 157px;
 }
 
 .swiper-slider{
@@ -15,20 +13,21 @@
 }
 
  .swiper-slide{
-   width: max-content;
- margin-right: 45px;
+  width: max-content;
+  margin-right: 45px;
 } 
 
+/*
  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
 .swiper-pagination-bullet-active{
   bottom: 0px;
 }
-
+*/
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
  width: 15px;
  height: 15px;
 }
-
+ 
 
 .swiper-button-prev{
   color: transparent;
@@ -40,6 +39,7 @@
   height: 64px;
   border-radius: 50%;
   box-shadow: 8px 14px 30px var(--color-box-shadow);
+  top: 35%;
 }
 
 .swiper-button-next{
@@ -53,5 +53,32 @@
   height: 64px;
   border-radius: 50%;
   box-shadow: 8px 14px 30px var(--color-box-shadow);
+  top: 35%;
 }
 
+@media screen and (max-width: 1500px) {
+  .swiper{
+    margin-left: 35px;
+    margin-right: 35px;
+   }
+}
+@media screen and (max-width: 1112px) {
+  .swiper{
+    margin-left: 50px;
+    margin-right: 50px;
+   }
+}
+
+
+@media screen and (max-width: 480px) {
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-button-disabled,
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    background: transparent;
+  }
+  .swiper{
+    margin-left: 25px;
+    margin-right: 25px;
+   }
+}

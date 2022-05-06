@@ -89,21 +89,21 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   width: 100%;
   display: block;
   justify-content: center;
-  margin-top:185px;
 }
 
 .bgDisplaySearch{
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin: 185px 114px;
 }
 
 .bgDisplaySearch h2{
-  font: bold 2rem /44px 'Rubik', sans-serif;
-/*   font-size: 32px; */
+  font-weight: bold;
+  font-family: var(--fontMain);
+  font-size: 32px;
   color: var(--titleTwoColor);
   letter-spacing: 0;
-  margin-bottom: 114px;
-
 }
 
 /* ESTILIZAÇÃO DOS CARDS DE TWEETS */
@@ -120,11 +120,13 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 .bgImageGallery img{
   box-shadow: 8px 14px 30px var(--color-box-shadow);
   border-radius: 21px;
+  padding: 5px;
 }
 
 .bgImageGallery p{
   position: absolute;
   top: 0;
+  left: 0;
   padding-top: 215px;
   padding-left: 20px;
   color: var(--titleOneColor);
@@ -174,6 +176,18 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   }
   .bgTitle p{
     font-size: 22px;
+  }
+  .bgImageGallery{
+    justify-content: left;
+  }
+  .bgImageGallery p {
+    padding-top: 200px;
+  }
+  .bgImageGallery span {
+    font-size: 18px;
+  }
+  .bgDisplaySearch{
+    margin: 100px 50px;
   }
 }
 
@@ -259,5 +273,50 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
     grid-template-columns: 1fr;
     gap: 20px;
     margin: 50px 30px;
+  }
+}
+
+/* RESPONSIVO IMAGEM CARROSEL */
+@media screen and (max-width:1500px) {
+ /*  .bgImageGallery{
+    justify-content: space-between;
+  }
+ */
+  .bgImageGallery img{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bgImageGallery{
+    justify-content: space-between;
+  }
+
+  .bgImageGallery img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bgImageGallery img{
+    width: 160px;
+  }
+  .bgImageGallery p {
+    padding-top: 160px;
+    font-size: 16px;
+  }
+  .bgImageGallery span {
+    padding-top: 200px;
+    font-size: 13px;
+  }
+  .bgMain{
+    margin-top: 0;
+  }
+  .bgDisplaySearch{
+    margin: 54px 36px;
+  }
+  .bgMain h2{
+    font-size: 22px;
+    text-align: center;
   }
 }
