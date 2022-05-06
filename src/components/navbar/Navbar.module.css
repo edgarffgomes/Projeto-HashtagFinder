@@ -139,3 +139,15 @@
     width: 8px;
   }
 } 
+
+
+
+@media screen and (max-width: 375px) {
+  .bgTitle h2 {
+    font-size: 12px;
+  }
+  .bgButton button {
+    height: 50px;
+    width: 70px;
+  }
+}

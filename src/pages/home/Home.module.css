@@ -154,6 +154,9 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   .bgTitle p{
     width: 100%;
   }
+  .bgTitle h1 {
+    font-size: 4.4rem;
+  }
 }
 @media screen and (max-width: 906px) {
  .bgTitle{
@@ -225,12 +228,13 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   .bgTitle h1 {
     font-size: 36px;
     width: 70%;
-    height: 82px;
+    height: max-content;
   }
   /* SUBTITULO DO HEADER */
   .bgTitle p {
     font: normal normal normal 16px/22px Rubik;
     width: 70%;
+    margin-top: 12px;
   }
   /* CAMPO DE BUSCA DO HEADER */
   .bgSearch{
