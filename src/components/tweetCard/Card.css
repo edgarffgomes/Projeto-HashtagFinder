@@ -79,8 +79,50 @@
   opacity: 1;
 }
 
-/* EDITAR COR NO GLOBAL PARA FUNCIONAR O HOVER
 
-.cardContent span:hover {
-  font-weight: bold;
+/* RESPONSIVO DESKTOP */
+@media screen and (min-width: 1305px) {
+  .cardContainer{
+    width: 100%;
+  }
+}
+
+/* @media screen and (min-width: 1112px) and (max-width: 1305px) {
+
+  .cardContainer{
+    width: 600px;
+    height: 235px;
+    margin: 20px;
+  }
 } */
+
+@media screen and (min-width: 1000px) and (max-width: 1582px){
+  .cardContainer{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 999px){
+  .cardContainer{
+    width: 100%;
+    flex-direction: column;
+  }
+  .cardContentTitle{
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 479px){
+  .cardContainer{
+    width: 100%;
+  }
+  .cardContentTitle h3,
+  .cardContentTitle p,
+  .tweetText {
+    font-size: 12px;
+  }
+
+  .cardContainer a span {
+    font-weight: normal;
+  }
+
+}

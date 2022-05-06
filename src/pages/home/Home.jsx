@@ -30,11 +30,31 @@ const Home = () => {
 
   /* configuração do carrosel */
   const settings = {
-    spaceBetween: 44,
+    spaceBetween: 50,
     slidesPerView: 5,
     navigation: true,
     pagination: {
       clickable: true,
+    },
+    breakpoints: {
+      1112: {
+        width: 1112,
+        slidesPerView: 4,
+      },
+      768: {
+        width: 768,
+        slidesPerView: 3,
+      },
+      480: {
+        spaceBetween: 150,
+        width: 100,
+        slidesPerView: 2,
+      },
+      414: {
+        spaceBetween: 14,
+        width: 'max-content',
+        slidesPerView: 3,
+      },
     },
   };
   return (

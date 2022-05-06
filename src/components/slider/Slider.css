@@ -1,5 +1,9 @@
 @import './Responsive.css';
 
+.swiper-container{
+  /* width: 500px; */
+}
+
 .swiper{
   padding: 0 0 50px 50px;
 }
@@ -10,20 +14,10 @@
   margin-right: 45px;
 }
 
-/* .swiper-wrapper{
-  display: flex;
-  justify-content: space-between;
-  margin: 0 158px;
-} */
-
  .swiper-slide{
- margin: 0;
+   width: max-content;
+ margin-right: 45px;
 } 
-
-/* 
- .swiper-backface-hidden .swiper-slide{
-   margin: 0;
- } */
 
  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
 .swiper-pagination-bullet-active{
