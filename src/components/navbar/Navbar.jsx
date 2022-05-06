@@ -23,7 +23,6 @@ export default function Navbar({ buttons, acao }) {
               color: button.textColor,
               minWidth: button.minWidth,
               margin: button.margin,
-              hover: button.hover,
             };
             return (
               <Link key={button.route} to={button.route}>

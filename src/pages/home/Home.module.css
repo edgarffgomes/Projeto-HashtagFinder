@@ -108,7 +108,9 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 
 /* ESTILIZAÇÃO DOS CARDS DE TWEETS */
 .flexCard{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 77px;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 125px 187px;
@@ -234,5 +236,28 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   /* INPUT DO CAMPO DE BUSCA */
   .bgInputSearch input{
     font-size: 17px;
+  }
+}
+
+/* RESPONSIVO CARDS TWITTER */
+@media screen and (min-width: 1305px) {
+  .flexCard {
+    margin: 125px 187px;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1582px){
+  .flexCard{
+    grid-template-columns: repeat(2, 50%);
+    gap: 20px;
+    margin: 50px 30px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 479px){
+  .flexCard{
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 50px 30px;
   }
 }
