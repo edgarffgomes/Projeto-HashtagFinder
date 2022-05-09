@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
-/* CSS */
+// CSS
 import styles from './Home.module.css';
-/* COMPONENTES */
+// COMPONENTS
 import Container from '../../components/container/Container';
 import IconSearch from '../../img/icon-search.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
-/* ICONES IMPORTADOS */
+// IMPORTED ICONS
 import iconAbout from '../../img/icon-info-circle.svg';
 import iconLogin from '../../img/icon-user-alt.svg';
-/* CARROSEL */
+// CARROUSEL SLIDER
 import { Slider, Slide } from '../../components/slider/ExportPattern';
+// TWEET CARDS
 import Card from '../../components/tweetCard/Card';
 
 const Home = () => {
-  /* configuração do navbar */
-  const [ativaNav, setAtivaNav] = useState(false);
+  const [ativaNav, setAtivaNav] = useState(false); //navbar effect
+  const [searchResponse, setSearchResponse] = useState('');
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(function () {
     function posicaoScroll() {
@@ -28,7 +30,7 @@ const Home = () => {
     window.addEventListener('scroll', posicaoScroll);
   }, []);
 
-  /* configuração do carrosel */
+  // carrousel settings
   const settings = {
     spaceBetween: 1,
     slidesPerView: 5,
@@ -64,6 +66,15 @@ const Home = () => {
       },
     },
   };
+
+  function handleValue(e) {
+    //validations
+    if (e.target.value === '') {
+      setSearchResponse('É necessário digitar algo no campo de buscas...');
+      setSearchValue('');
+    }
+  }
+
   return (
     <>
       <Container>
@@ -98,7 +109,7 @@ const Home = () => {
               Twitter abaixo
             </p>
           </div>
-          {/* background do campo de pesquisa*/}
+          {/* background do campo de pesquisa */}
           <div className={styles.bgSearch}>
             {/* background da imagem do campo de pesquisa */}
             <div className={styles.bgImageSearch}>
@@ -108,9 +119,10 @@ const Home = () => {
             <div className={styles.bgInputSearch}>
               <input
                 type="search"
-                name="search"
                 id="search"
+                onKeyDown={handleValue}
                 placeholder="Buscar..."
+                maxLength={20}
               />
             </div>
           </div>
