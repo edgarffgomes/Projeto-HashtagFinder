@@ -48,6 +48,9 @@ body .container{
 .usernameSection{
 	margin-top: 118px;
 }
+input::placeholder{
+	color: #292929;
+}
 .usernameInput, .passwordInput{
 	width: 100%;
 	outline: none;
@@ -62,7 +65,7 @@ body .container{
 	border: none;
 	border-radius: 34px;
 	height: 56px;
-	width: 44.86%;
+	width: 205px;
 	color: #FFFFFF;
 	font-size: 19px;
 	align-items: center;
@@ -89,11 +92,12 @@ body .container{
 		margin-top: 86px;
 	}
 	.passwordSection{
-		margin-top: 84px;
+		margin-top: 72px;
 	}
 	.accessButton{
 		margin-top: 40px;
 		height: 58px;
+		width: 213px;
 		font-size: 18px;
 	}
 }
@@ -102,10 +106,14 @@ body .container{
 		width: 350px;
 	}
 	.accessButton{
-		width: 33%;
 		font-size: 15px;
 		letter-spacing: 0;
 		font-weight: bolder;
 	}
+}
 
+@media  screen and (max-width: 400px) {
+		.loginContainer{
+			width: 300px
+		}
 }
