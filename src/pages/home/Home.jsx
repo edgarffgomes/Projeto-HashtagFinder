@@ -13,12 +13,15 @@ import iconLogin from '../../img/icon-user-alt.svg';
 import { Slider, Slide } from '../../components/slider/ExportPattern';
 // TWEET CARDS
 import Card from '../../components/tweetCard/Card';
+// METHOD POST TWEETS
+import { postData } from '../../api/AirtablePOST';
 
 const Home = () => {
   const [ativaNav, setAtivaNav] = useState(false); //navbar effect
   const [searchResponse, setSearchResponse] = useState('');
   const [searchValue, setSearchValue] = useState('');
 
+  //navbar effect
   useEffect(function () {
     function posicaoScroll() {
       if (window.scrollY > 750) {
@@ -67,11 +70,23 @@ const Home = () => {
     },
   };
 
+  // get value from input field
   function handleValue(e) {
-    //validations
-    if (e.target.value === '') {
-      setSearchResponse('É necessário digitar algo no campo de buscas...');
-      setSearchValue('');
+    if (e.keyCode === 13) {
+      const asyncPost = async () => {
+        await postData(e.target.value);
+      };
+      setSearchValue(
+        e.target.value.replace(/[^a-zA-Z0-9_]/g, '').replace(' ', ''),
+      );
+
+      asyncPost();
+
+      //validations
+      if (e.target.value === '') {
+        setSearchResponse('É necessário digitar algo no campo de buscas...');
+        setSearchValue('');
+      }
     }
   }
 
