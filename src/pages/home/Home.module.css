@@ -145,6 +145,17 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   text-align: left;
 }
 
+/* RESPOSTA DO CAMPO INPUT */
+.bgResponse{
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+}
+.textResponse{
+  font-size: 24px;
+  font-family: var(--fontMain);
+}
+
 /* RESPONSIVO HOME DESKTOP */
 @media screen and (max-width: 1112px) {
   .bgSearch{
