@@ -17,6 +17,10 @@ import { Slider, Slide } from '../../components/slider/ExportPattern';
 import Card from '../../components/tweetCard/Card';
 // METHOD POST TWEETS
 import { postData } from '../../api/AirtablePOST';
+// METHOD GET IMAGES
+import { getTweetImgs } from '../../api/GETTweetImages';
+// METHOD GET TWEETS
+import { getTweets } from '../../api/GETTweets';
 
 const Home = () => {
   const [ativaNav, setAtivaNav] = useState(false); //navbar effect
@@ -25,6 +29,10 @@ const Home = () => {
   const [titleTag, setTitleTag] = useState();
   const [resultsNumber, setResultsNumber] = useState(0);
   const [animationMode, setAnimationMode] = useState(0);
+  const [tweets, setTweets] = useState(null);
+  const [moreRequest, setMoreRequest] = useState(10);
+  const [tweetImgs, setTweetImgs] = useState(null);
+
   //navbar effect
   useEffect(function () {
     function posicaoScroll() {
@@ -74,6 +82,59 @@ const Home = () => {
     },
   };
 
+  const asyncCall = async () => {
+    const tweetCall = await getTweets(searchValue, moreRequest);
+    const tweetImgs = await getTweetImgs(searchValue, moreRequest);
+    //validation
+    if (!tweetCall.data) {
+      setSearchResponse('Nenhum tweet foi achado, tente novamente... 😭');
+    }
+    const imgSet = tweetImgs.data.map((tweet) => {
+      const user = tweetImgs.includes.users.find(
+        (user) => tweet.author_id === user.id,
+      );
+      const img = tweetImgs.includes.media.find(
+        (img) => tweet.attachments.media_keys[0] === img.media_key,
+      );
+      return {
+        id: tweet.id,
+        img: img.url,
+        username: user.username,
+        user: user.name,
+      };
+    });
+
+    const tweetSet = tweetCall.data.map((tweet) => {
+      const user = tweetCall.includes.users.find(
+        (user) => tweet.author_id === user.id,
+      );
+      return {
+        id: tweet.id,
+        text: tweet.text,
+        username: user.username,
+        user: user.user,
+        photo: user.profile_image_url,
+      };
+    });
+
+    setTweetImgs(imgSet);
+    setTweets(tweetSet);
+    setTitleTag(searchValue);
+    setMoreRequest(moreRequest + 10);
+  };
+
+  useEffect(() => {
+    if (searchValue) {
+      asyncCall();
+      return () => {
+        if (tweets) {
+        }
+        setSearchResponse('');
+        setSearchValue('');
+      };
+    }
+  });
+
   // get value from input field
   function handleValue(e) {
     if (e.keyCode === 13) {
@@ -84,6 +145,8 @@ const Home = () => {
         e.target.value.replace(/[^a-zA-Z0-9_]/g, '').replace(' ', ''),
       );
 
+      setResultsNumber(10);
+      setMoreRequest(10);
       asyncPost();
 
       //validations
@@ -187,30 +250,46 @@ const Home = () => {
           ) : null}
         </header>
         <main className={styles.bgMain}>
-          <div className={styles.bgDisplaySearch}>
-            <h2>Exibindo os 10 resultados mais recentes para #natureza</h2>
-          </div>
+          {tweets ? (
+            <div className={styles.bgDisplaySearch}>
+              <h2>
+                Exibindo os {moreRequest > 0 ? moreRequest - 10 : null}{' '}
+                resultados mais recentes para #{titleTag}
+              </h2>
+            </div>
+          ) : null}
+          {/* {moreRequest > 0 ? moreRequest - 10 : null} */}
           <section>
             <Slider settings={settings}>
-              <Slide>
-                <div className={styles.bgImageGallery}>
-                  <img
-                    src="https://images.unsplash.com/photo-1595886802423-b92bba08046e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80"
-                    alt="Teste"
-                    height="287px"
-                    width="287px"
-                  />
-                  <p>Postado por:</p>
-                  <span>@tweetusername</span>
-                </div>
-              </Slide>
+              {tweetImgs?.map(({ user, username, img, id }) => {
+                return (
+                  <Slide>
+                    <div className={styles.bgImageGallery} key={id}>
+                      <img src={img} alt={user} height="287px" width="287px" />
+                      <p>Postado por: {user}</p>
+                      <h3>@{username}</h3>
+                    </div>
+                  </Slide>
+                );
+              })}
             </Slider>
           </section>
+
           <section className={styles.flexCard}>
-            <Card />
+            {tweets?.map(({ user, username, text, id, photo }) => {
+              return (
+                <Card
+                  userImage={photo}
+                  user={user}
+                  userName={username}
+                  tweetText={text}
+                  tweetId={id}
+                  key={id}
+                />
+              );
+            })}
           </section>
         </main>
-
         <Footer />
       </Container>
     </>
