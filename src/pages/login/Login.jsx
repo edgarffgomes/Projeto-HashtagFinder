@@ -1,13 +1,13 @@
 import React from 'react';
 import style from './Login.module.css';
-
-
 /* NAVBAR */
 import Navbar from '../../components/navbar/Navbar';
 /* ICONE DO NAVBAR */
 import iconHome from '../../img/icon-home.svg';
-const Login = () => {
+
+
   return (
+
     <div className={style.container}>
       {/*<Navbar/>*/}
       <Navbar
@@ -21,16 +21,20 @@ const Login = () => {
           },
         ]}
       />
+    {/*Container principal da div de login/>*/}
       <div className={style.loginContainer}>
+        {/*Formulário de login/>*/}
         <form className={style.loginForm}>
           <h3>Login</h3>
+           {/*Seção de inserção do username/>*/}
           <div className={style.usernameSection}>
             <input
-              type="text"
+              type="email"
               placeholder="Usuário"
               className={style.usernameInput}
             />
           </div>
+        {/*Seção de inserção da senha/>*/}
           <div className={style.passwordSection}>
             <input
               type="password"
@@ -38,7 +42,8 @@ const Login = () => {
               className={style.passwordInput}
             />
           </div>
-          <button className={style.accessButton}>Acessar</button>
+          {/*Botão de acesso/>*/}
+          <button type="submit" className={style.accessButton}>Acessar</button>
         </form>
       </div>
     </div>
