@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
+    "css-loader": "^6.7.1",
+=======
     "airtable": "^0.11.4",
     "framer-motion": "^6.3.3",
+>>>>>>> main
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",

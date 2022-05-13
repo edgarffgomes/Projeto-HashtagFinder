@@ -6,6 +6,7 @@ import Container from '../../components/container/Container';
 import IconSearch from '../../img/icon-search.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
+import LoaderComponent from '../../components/loader/Loader';
 // IMPORTED ICONS
 import iconAbout from '../../img/icon-info-circle.svg';
 import iconLogin from '../../img/icon-user-alt.svg';
