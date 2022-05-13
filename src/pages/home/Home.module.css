@@ -71,7 +71,7 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 
 /* INPUT DE PESQUISA */
 .bgInputSearch input {
-  width: 100%;
+  width: 95%;
   border: none;
   border-radius: 72px;
   outline: none;
@@ -121,6 +121,7 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   box-shadow: 8px 14px 30px var(--color-box-shadow);
   border-radius: 21px;
   padding: 5px;
+  max-width: fit-content;
 }
 
 .bgImageGallery p{
@@ -143,6 +144,17 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   color: var(--titleOneColor);
   font: 21px/23px var(--fontMain);
   text-align: left;
+}
+
+/* RESPOSTA DO CAMPO INPUT */
+.bgResponse{
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+}
+.textResponse{
+  font-size: 24px;
+  font-family: var(--fontMain);
 }
 
 /* RESPONSIVO HOME DESKTOP */
