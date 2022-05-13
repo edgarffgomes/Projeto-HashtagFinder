@@ -21,11 +21,12 @@ body .container{
 .loginContainer{
 	display: flex;
 	flex-direction: column;
+	text-align: center;
 	margin: 236px auto;
 	width: 553px;
 	height: 608px;
+	color: red;
 	background: #FFFFFF;
-	color:  black;
 	border-radius: 14px;
 }
 /* Editando formulário de login */
@@ -76,6 +77,7 @@ input::placeholder{
 	letter-spacing: 0.57px;
 	cursor: pointer;
 }
+
 /* media query para telas até 1200px */
 @media  screen and (max-width: 1200px) {
 	/* Editando container do login */
