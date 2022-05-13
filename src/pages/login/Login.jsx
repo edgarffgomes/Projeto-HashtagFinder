@@ -1,15 +1,23 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
+import {BrowserRouter, useNavigate, Routes,Route} from "react-router-dom"
 import style from './Login.module.css';
 /* NAVBAR */
 import Navbar from '../../components/navbar/Navbar';
 /* ICONE DO NAVBAR */
 import iconHome from '../../img/icon-home.svg';
 
-const Login = () =>{
+const Login = ({setIsLogged = ()=>{}}) =>{
   //array que receberá dados da API
   let apiData = [];
+
   //parâmetros para filtrar dados a serem recebidos pela APO
   const squad = "260422";
+
+
+
+  //variável a ser utilizada para navegação
+  const navigate = useNavigate();
+
 
   //useEffect para receber dados de login da API ao renderizar aplicação
   useEffect(() => async function getData() {
@@ -42,7 +50,10 @@ const Login = () =>{
     });
   }, [])
 
+
   //console.log(apiData);
+
+
 
   function handleSubmit(e){
     //variável de parâmetro para verificação dos inputs
@@ -67,7 +78,15 @@ const Login = () =>{
       document.getElementById('messageError').innerHTML = "Erro! Os dados inseridos são inválidos."
       e.preventDefault();
     }
+    else{
+      redirectSearch();
+    }
   } 
+
+  function  redirectSearch(){
+    setIsLogged = true;
+    navigate('/search');
+  }
    
 
   return (
