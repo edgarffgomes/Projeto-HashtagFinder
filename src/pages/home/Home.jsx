@@ -9,6 +9,7 @@ import Footer from '../../components/footer/Footer';
 // IMPORTED ICONS
 import iconAbout from '../../img/icon-info-circle.svg';
 import iconLogin from '../../img/icon-user-alt.svg';
+import { FaArrowCircleUp } from 'react-icons/fa';
 // MOTION
 import { motion } from 'framer-motion';
 // CARROUSEL SLIDER
@@ -21,9 +22,12 @@ import { postData } from '../../api/AirtablePOST';
 import { getTweetImgs } from '../../api/GETTweetImages';
 // METHOD GET TWEETS
 import { getTweets } from '../../api/GETTweets';
+// LOADER
+import Loader from '../../components/loader/Loader';
 
 const Home = () => {
   const [ativaNav, setAtivaNav] = useState(false); //navbar effect
+  const [imageActive, setImageActive] = useState('');
   const [searchResponse, setSearchResponse] = useState(''); //search answer
   const [searchValue, setSearchValue] = useState(''); //field value
   const [titleTag, setTitleTag] = useState();
@@ -32,6 +36,9 @@ const Home = () => {
   const [tweets, setTweets] = useState(null);
   const [moreRequest, setMoreRequest] = useState(10);
   const [tweetImgs, setTweetImgs] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [scrollTopButton, setTopButton] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
 
   //navbar effect
   useEffect(function () {
@@ -82,13 +89,16 @@ const Home = () => {
     },
   };
 
+  //set api items
   const asyncCall = async () => {
     const tweetCall = await getTweets(searchValue, moreRequest);
     const tweetImgs = await getTweetImgs(searchValue, moreRequest);
+
     //validation
     if (!tweetCall.data) {
       setSearchResponse('Nenhum tweet foi achado, tente novamente... 😭');
     }
+
     const imgSet = tweetImgs.data.map((tweet) => {
       const user = tweetImgs.includes.users.find(
         (user) => tweet.author_id === user.id,
@@ -120,7 +130,7 @@ const Home = () => {
     setTweetImgs(imgSet);
     setTweets(tweetSet);
     setTitleTag(searchValue);
-    setMoreRequest(moreRequest + 10);
+    setMoreRequest(moreRequest);
   };
 
   useEffect(() => {
@@ -145,8 +155,10 @@ const Home = () => {
         e.target.value.replace(/[^a-zA-Z0-9_]/g, '').replace(' ', ''),
       );
 
+      setSearchResponse(<Loader />);
       setResultsNumber(10);
       setMoreRequest(10);
+
       asyncPost();
 
       //validations
@@ -165,6 +177,54 @@ const Home = () => {
       setSearchResponse('Limite de caracteres atingido! 🚨');
     }
   }
+
+  //scroll effects
+  function handleScroll() {
+    if (tweets) {
+      const bottom =
+        Math.ceil(window.innerHeight + window.scrollY) >=
+        document.documentElement.scrollHeight;
+
+      if (bottom) {
+        setLoading(true);
+        function fetchMoreData() {
+          const newSearch = document.getElementById('input').value;
+          setSearchValue(newSearch);
+
+          setResultsNumber(resultsNumber + 5);
+
+          return console.log(moreRequest);
+        }
+        setTimeout(() => setLoading(false), 2000);
+        setTimeout(() => fetchMoreData(), 1500);
+        setTimeout(() => setTopButton(true), 3000);
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (tweets) {
+      const checkScrollTop = () => {
+        if (!showScroll && window.pageYOffset > 400) {
+          setShowScroll(true);
+        } else if (showScroll && window.pageYOffset <= 400) {
+          setShowScroll(false);
+        }
+      };
+      window.addEventListener('scroll', checkScrollTop);
+      window.addEventListener('scroll', handleScroll, {
+        passive: true,
+      });
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
+  // scroll to top of page
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -207,6 +267,8 @@ const Home = () => {
               <img
                 src={IconSearch}
                 onClick={() => {
+                  setSearchResponse(<Loader></Loader>);
+                  setMoreRequest(10);
                   setSearchValue(
                     document
                       .getElementById('input')
@@ -234,6 +296,7 @@ const Home = () => {
               />
             </div>
           </div>
+
           {searchResponse ? (
             <>
               <motion.div
@@ -253,21 +316,24 @@ const Home = () => {
           {tweets ? (
             <div className={styles.bgDisplaySearch}>
               <h2>
-                Exibindo os {moreRequest > 0 ? moreRequest - 10 : null}{' '}
-                resultados mais recentes para #{titleTag}
+                Exibindo os {moreRequest} resultados mais recentes para #
+                {titleTag}
               </h2>
             </div>
-          ) : null}
-          {/* {moreRequest > 0 ? moreRequest - 10 : null} */}
+          ) : /* {moreRequest > 0 ? moreRequest - 10 : null}{' '} */
+          null}
+
           <section>
             <Slider settings={settings}>
               {tweetImgs?.map(({ user, username, img, id }) => {
                 return (
-                  <Slide>
-                    <div className={styles.bgImageGallery} key={id}>
+                  <Slide key={id}>
+                    <div className={styles.bgImageGallery}>
                       <img src={img} alt={user} height="287px" width="287px" />
-                      <p>Postado por: {user}</p>
-                      <h3>@{username}</h3>
+                      <div className={styles.bgPostUser}>
+                        <p>Postado por:</p>
+                        <h3>@{username}</h3>
+                      </div>
                     </div>
                   </Slide>
                 );
@@ -289,7 +355,94 @@ const Home = () => {
               );
             })}
           </section>
+
+          {/*     {imageActive ? (
+            <motion.div
+              initial={{ y: animationMode, opacity: 0 }}
+              animate={{ y: animationMode, opacity: 1 }}
+              onClick={() => setAnimationMode(animationMode)}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <>
+                <section className={styles.bgMoreImgs}>
+                  <Slider settings={settings}>
+                    {tweetImgs?.map(({ user, username, img, id }) => {
+                      return (
+                        <>
+                          <Slide key={id}>
+                            <div className={styles.bgImageGallery}>
+                              <img
+                                src={img}
+                                alt={user}
+                                height="287px"
+                                width="287px"
+                              />
+                              <div className={styles.bgPostUser}>
+                                <p>Postado por:</p>
+                                <h3>@{username}</h3>
+                              </div>
+                            </div>
+                          </Slide>
+                        </>
+                      );
+                    })}
+                  </Slider>
+                </section>
+              </>
+            </motion.div>
+          ) : (
+            <>
+              <section>
+                <motion.div
+                  initial={{ y: animationMode, opacity: 0 }}
+                  animate={{ y: animationMode, opacity: 1 }}
+                  onClick={() => setAnimationMode(!animationMode)}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                >
+                  {tweets?.map(({ user, username, text, id, photo }) => {
+                    return (
+                      <>
+                        <Card
+                          userImage={photo}
+                          user={user}
+                          userName={username}
+                          tweetText={text}
+                          tweetId={id}
+                          key={id}
+                        />
+                      </>
+                    );
+                  })}
+                </motion.div>
+              </section>
+            </>
+          )} */}
+
+          {loading ? (
+            <motion.div
+              initial={{ y: animationMode, opacity: 0 }}
+              animate={{ y: animationMode, opacity: 1 }}
+              onClick={() => setAnimationMode(animationMode)}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <div className={styles.bgLoader}>
+                <Loader />
+              </div>
+            </motion.div>
+          ) : null}
         </main>
+        {scrollTopButton ? (
+          <>
+            <div
+              className={`${styles.bgTopScroll} ${styles.scrollTop}`}
+              onClick={scrollTop}
+              style={{ height: 40, display: showScroll ? 'flex' : 'none' }}
+            >
+              <FaArrowCircleUp />
+            </div>
+          </>
+        ) : null}
+
         <Footer />
       </Container>
     </>
