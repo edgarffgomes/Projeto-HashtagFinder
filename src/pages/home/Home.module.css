@@ -71,7 +71,7 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 
 /* INPUT DE PESQUISA */
 .bgInputSearch input {
-  width: 100%;
+  width: 95%;
   border: none;
   border-radius: 72px;
   outline: none;
@@ -117,33 +117,40 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 }
 
 /* ESTILIZAÇÃO DA GALERIA */
+.bgImageGallery{
+  display: flex;
+}
+
 .bgImageGallery img{
   box-shadow: 8px 14px 30px var(--color-box-shadow);
   border-radius: 21px;
   padding: 5px;
+  object-fit: cover;
 }
 
-.bgImageGallery p{
+.bgPostUser{
   position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 215px;
-  padding-left: 20px;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 21px;
   color: var(--titleOneColor);
-  font: normal normal normal 17px/19px Rubik;
-  text-align: left;
+  font-family: var(--fontMain);
+  background-color: rgba( 255, 255, 255, 0.35 );
+  backdrop-filter: blur( 13.5px );
+  box-shadow: 8px 14px 30px var(--color-box-shadow);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 16px;
 }
 
-.bgImageGallery span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 240px;
-  padding-left: 20px;
-  color: var(--titleOneColor);
-  font: 21px/23px var(--fontMain);
-  text-align: left;
+.bgPostUser p{
+padding-bottom: 6px;
 }
+
+
+
+
 
 /* RESPOSTA DO CAMPO INPUT */
 .bgResponse{
