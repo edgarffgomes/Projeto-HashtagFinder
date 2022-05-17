@@ -130,7 +130,7 @@ const Home = () => {
     setTweetImgs(imgSet);
     setTweets(tweetSet);
     setTitleTag(searchValue);
-    setMoreRequest(moreRequest);
+    setMoreRequest(moreRequest + 10);
   };
 
   useEffect(() => {
@@ -251,7 +251,8 @@ const Home = () => {
           />
         </div>
         {/* background do cabeçalho */}
-        <header className={styles.bgHeader}>
+        {/* styles.bgHeader */}
+        <header className={tweets ? styles.bgHeader : styles.bgHeaderDisabled}>
           {/* background do titulo */}
           <div className={styles.bgTitle}>
             <h1>Encontre hashtags de maneira fácil</h1>
@@ -289,7 +290,7 @@ const Home = () => {
             <div className={styles.bgInputSearch}>
               <input
                 type="search"
-                id="search"
+                id="input"
                 onKeyDown={handleValue}
                 placeholder="Buscar..."
                 maxLength={20}
@@ -305,19 +306,21 @@ const Home = () => {
                 onClick={() => setAnimationMode(animationMode)}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <div className={styles.bgResponse}>
+                {/*  tweets ? styles.bgResponse : styles.bgResponseDisabled  */}
+                <div className={tweets ? styles.bgResponse : styles.bgLoader}>
                   <div className={styles.textResponse}>{searchResponse}</div>
                 </div>
               </motion.div>
             </>
           ) : null}
         </header>
-        <main className={styles.bgMain}>
+        {/* styles.bgMain */}
+        <main className={tweets ? styles.bgMain : styles.bgMainDisabled}>
           {tweets ? (
             <div className={styles.bgDisplaySearch}>
               <h2>
-                Exibindo os {moreRequest} resultados mais recentes para #
-                {titleTag}
+                Exibindo os {moreRequest > 0 ? moreRequest - 10 : null}{' '}
+                resultados mais recentes para #{titleTag}
               </h2>
             </div>
           ) : /* {moreRequest > 0 ? moreRequest - 10 : null}{' '} */
@@ -356,78 +359,16 @@ const Home = () => {
             })}
           </section>
 
-          {/*     {imageActive ? (
-            <motion.div
-              initial={{ y: animationMode, opacity: 0 }}
-              animate={{ y: animationMode, opacity: 1 }}
-              onClick={() => setAnimationMode(animationMode)}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              <>
-                <section className={styles.bgMoreImgs}>
-                  <Slider settings={settings}>
-                    {tweetImgs?.map(({ user, username, img, id }) => {
-                      return (
-                        <>
-                          <Slide key={id}>
-                            <div className={styles.bgImageGallery}>
-                              <img
-                                src={img}
-                                alt={user}
-                                height="287px"
-                                width="287px"
-                              />
-                              <div className={styles.bgPostUser}>
-                                <p>Postado por:</p>
-                                <h3>@{username}</h3>
-                              </div>
-                            </div>
-                          </Slide>
-                        </>
-                      );
-                    })}
-                  </Slider>
-                </section>
-              </>
-            </motion.div>
-          ) : (
-            <>
-              <section>
-                <motion.div
-                  initial={{ y: animationMode, opacity: 0 }}
-                  animate={{ y: animationMode, opacity: 1 }}
-                  onClick={() => setAnimationMode(!animationMode)}
-                  transition={{ duration: 0.7, delay: 0.4 }}
-                >
-                  {tweets?.map(({ user, username, text, id, photo }) => {
-                    return (
-                      <>
-                        <Card
-                          userImage={photo}
-                          user={user}
-                          userName={username}
-                          tweetText={text}
-                          tweetId={id}
-                          key={id}
-                        />
-                      </>
-                    );
-                  })}
-                </motion.div>
-              </section>
-            </>
-          )} */}
-
           {loading ? (
             <motion.div
-              initial={{ y: animationMode, opacity: 0 }}
-              animate={{ y: animationMode, opacity: 1 }}
+              initial={{ y: animationMode, opacity: 1 }}
+              animate={{ y: animationMode, opacity: 0 }}
               onClick={() => setAnimationMode(animationMode)}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 20, delay: 0.4 }}
+              /* duration: 0.7, delay: 0.4  */
+              className={styles.bgLoader}
             >
-              <div className={styles.bgLoader}>
-                <Loader />
-              </div>
+              <Loader />
             </motion.div>
           ) : null}
         </main>
@@ -438,7 +379,7 @@ const Home = () => {
               onClick={scrollTop}
               style={{ height: 40, display: showScroll ? 'flex' : 'none' }}
             >
-              <FaArrowCircleUp />
+              <FaArrowCircleUp className={styles.bgSvg} />
             </div>
           </>
         ) : null}
