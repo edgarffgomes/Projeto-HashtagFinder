@@ -24,7 +24,6 @@ const SearchesPerformedList = () => {
       })
       .eachPage(
         function page(records, fetchNextPage) {
-          // This function (`page`) will get called for each page of records.
           const array = [];
           records.forEach(function (record) {
             let hourOptions = { hour: "numeric", minute: "numeric" };
@@ -39,11 +38,6 @@ const SearchesPerformedList = () => {
             array.push(hashtagObject);
           });
           setHashtags([...array]);
-
-          // To fetch the next page of records, call `fetchNextPage`.
-          // If there are more records, `page` will get called again.
-          // If there are no more records, `done` will get called.
-          fetchNextPage();
         },
         function done(err) {
           if (err) {
