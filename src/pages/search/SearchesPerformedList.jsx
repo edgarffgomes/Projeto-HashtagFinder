@@ -10,20 +10,35 @@ import iconHome from "../../img/icon-home.svg";
 import base from "../../utils/api";
 
 const SearchesPerformedList = () => {
+  const [hashtags, setHashtags] = useState([]);
+  const [page, setPage] = useState(1);
+
+  function handleLoadMoreButton() {
+    setPage(page + 1);
+  }
+
   useEffect(() => {
     base("Buscas")
       .select({
-        // Selecting the first 10 records in Grid view:
-        maxRecords: 10,
         view: "Grid view",
       })
       .eachPage(
         function page(records, fetchNextPage) {
           // This function (`page`) will get called for each page of records.
-
+          const array = [];
           records.forEach(function (record) {
-            console.log(record.get("Squad"), record.get("Hashtag"));
+            let hourOptions = { hour: "numeric", minute: "numeric" };
+            const data = new Date(record.get("Data"));
+
+            const hashtagObject = {
+              data: new Intl.DateTimeFormat("pt-BR").format(data),
+              horario: new Intl.DateTimeFormat("pt-BR", hourOptions).format(data),
+              hashtag: record.get("Hashtag").toUpperCase(),
+            };
+
+            array.push(hashtagObject);
           });
+          setHashtags([...array]);
 
           // To fetch the next page of records, call `fetchNextPage`.
           // If there are more records, `page` will get called again.
@@ -60,7 +75,15 @@ const SearchesPerformedList = () => {
         ]}
       />
       <div className='main-container'>
-        <Body />
+        <Body hashtags={hashtags.slice(0, 10 * page)} />
+
+        {hashtags.length > 10 * page && (
+          <div className='pagination'>
+            <button className='load-more' onClick={handleLoadMoreButton}>
+              Carregar mais
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
