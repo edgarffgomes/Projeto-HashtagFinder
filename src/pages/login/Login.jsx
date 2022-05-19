@@ -1,23 +1,26 @@
-import React, {useEffect,useState} from 'react';
-import {BrowserRouter, useNavigate, Routes,Route} from "react-router-dom"
+import React, {useEffect, useState} from 'react';
+import { useAuth } from "../../contexts/Auth";
+import { useNavigate } from 'react-router-dom';
 import style from './Login.module.css';
 /* NAVBAR */
 import Navbar from '../../components/navbar/Navbar';
 /* ICONE DO NAVBAR */
 import iconHome from '../../img/icon-home.svg';
 
-const Login = ({setIsLogged = ()=>{}}) =>{
+const Login = ()=>{
   //array que receberá dados da API
-  let apiData = [];
+  const apiData = [];
 
   //parâmetros para filtrar dados a serem recebidos pela APO
   const squad = "260422";
 
+  const [user, setUser] = useState('');
 
+  const [password, setPassword] = useState('');
 
-  //variável a ser utilizada para navegação
+  const auth = useAuth();
+
   const navigate = useNavigate();
-
 
   //useEffect para receber dados de login da API ao renderizar aplicação
   useEffect(() => async function getData() {
@@ -48,45 +51,18 @@ const Login = ({setIsLogged = ()=>{}}) =>{
         //Verificação de erros ao chamar API
         if (err) { console.error(err); return; }
     });
-  }, [])
-
-
-  //console.log(apiData);
-
-
-
-  function handleSubmit(e){
-    //variável de parâmetro para verificação dos inputs
-    var ver = 0;
-    //recebendo valor do  username
-    var name = document.getElementById('username').value
-    //recebendo valor da senha
-    var pass = document.getElementById('password').value
-    //realizando map dos dados da api
-    apiData.map((data) =>{
-      //verificandp se o input username é igual ao valor da api 
-      if(name === data.Email){
-      ver++;
-        if(pass === data.Senha){
-          ver++;
-        } else{
-          ver = 0;
-        }
-      }
-    })
-    if(ver !== 2){
-      document.getElementById('messageError').innerHTML = "Erro! Os dados inseridos são inválidos."
-      e.preventDefault();
-    }
-    else{
-      redirectSearch();
-    }
-  } 
-
-  function  redirectSearch(){
-    setIsLogged = true;
-    navigate('/search');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }
+  , [])
+
+
+  const handleSubmit = () => {
+    auth.login(true);
+    navigate('/search', { replace: true })
+  }
+
+
+  
    
 
   return (
@@ -115,7 +91,7 @@ const Login = ({setIsLogged = ()=>{}}) =>{
               type="email"
               placeholder="Usuário"
               className={style.usernameInput}
-              id="username"
+              onChange={(e) => setUser(e.target.value)}
               required
             />
           </div>
@@ -125,7 +101,7 @@ const Login = ({setIsLogged = ()=>{}}) =>{
               type="password"
               placeholder="Senha"
               className={style.passwordInput}
-              id="password"
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>

@@ -1,4 +1,62 @@
 @import "../../css/Global.css";
+.bgNav{
+  height: 3.125rem;
+  width: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 4.0625rem;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 200;
+}
+
+.bgTitle h2{
+  color: var(--button-color);
+}
+
+/* ESTILIZA O TITULO DA NAVEGAÇÃO */
+.bgTitle h2 {
+  font-family: var(--fontMain);
+  color: var(--titleOneColor);
+  font-size: 2.5rem;
+}
+
+/* ESTILIZA O STRONG QUE ESTÁ DENTRO DO H2 */
+.bgTitle strong {
+  font-weight: bold;
+}
+.bgButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgButton button{
+  height: 50px;
+  width: 170px;
+  background: #3633F7;
+  color: #FFF;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontMain);
+  font-weight: bold;
+  letter-spacing: 2.55px;
+  text-transform: uppercase;
+}
+
+.bgButton img{
+  margin-right: 8px;
+}
+
 .title {
   font-family: var(--fontMain);
   color: var(--titleOneColor);
@@ -82,6 +140,34 @@
   margin: 0 1rem;
 }
 
+/* RESPONSIVO NAVBAR DESKTOP */
+@media screen and (max-width: 1112px) {
+
+  /* CAMPO DE NAVEGAÇÃO */
+  .bgNav{
+    padding: 40px;
+  }
+
+  }
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2{
+    font-size: 40px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 50px;
+    width: 170px;
+    font-size: 10px;
+  }
+  /* PRIMEIRO BOTÃO DA NAVBAR */
+  .bgButton a:first-child{
+    margin-right: 15px;
+  }
+  /* ICONES DA NAVBAR */
+  .bgButton button img {
+    margin-right: 8px;
+  }
+
 @media (max-width: 850px) {
   .title {
     width: 100%;
@@ -137,3 +223,49 @@
     max-width: 20%;
   }
 }
+
+/* RESPONSIVO NAVBAR TABLET  */
+@media screen and (max-width: 800px){
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2 {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 40px;
+    width: 130px;
+  }
+}
+
+/* RESPONSIVO NAVBAR MOBILE */
+@media screen and (max-width: 540px) {
+  /* TITULO DA NAVEGAÇÃO */
+  .bgTitle h2 {
+    font-size: 19px;
+  }
+  /* BOTÃO DA NAVEGAÇÃO */
+  .bgButton button {
+    height: 30px;
+    width: 106px;
+  }
+  /* ICONES DA NAVEGAÇÃO */
+  .bgButton img {
+    height: 8px;
+    width: 8px;
+  }
+} 
+
+
+
+@media screen and (max-width: 375px) {
+  .bgTitle h2 {
+    font-size: 12px;
+  }
+  .bgButton button {
+    height: 50px;
+    width: 70px;
+  }
+}
+
+
