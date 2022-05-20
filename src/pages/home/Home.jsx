@@ -27,7 +27,7 @@ import Loader from '../../components/loader/Loader';
 
 const Home = () => {
   const [ativaNav, setAtivaNav] = useState(false); //navbar effect
-  const [imageActive, setImageActive] = useState('');
+  const [imageActive, setImageActive] = useState({});
   const [searchResponse, setSearchResponse] = useState(''); //search answer
   const [searchValue, setSearchValue] = useState(''); //field value
   const [titleTag, setTitleTag] = useState();
@@ -89,48 +89,51 @@ const Home = () => {
     },
   };
 
-  //set api items
-  const asyncCall = async () => {
-    const tweetCall = await getTweets(searchValue, moreRequest);
-    const tweetImgs = await getTweetImgs(searchValue, moreRequest);
+  const asyncCall = () => {
+    getTweets(searchValue, moreRequest)
+      .then((tweetCall) => {
+        const tweetSet = tweetCall.data.map((tweet) => {
+          const user = tweetCall.includes.users.find(
+            (user) => tweet.author_id === user.id,
+          );
+          return {
+            id: tweet.id,
+            text: tweet.text,
+            username: user.username,
+            user: user.name,
+            photo: user.profile_image_url,
+          };
+        });
 
-    //validation
-    if (!tweetCall.data) {
-      setSearchResponse('Nenhum tweet foi achado, tente novamente... 😭');
-    }
+        setImageActive(false);
 
-    const imgSet = tweetImgs.data.map((tweet) => {
-      const user = tweetImgs.includes.users.find(
-        (user) => tweet.author_id === user.id,
-      );
-      const img = tweetImgs.includes.media.find(
-        (img) => tweet.attachments.media_keys[0] === img.media_key,
-      );
-      return {
-        id: tweet.id,
-        img: img.url,
-        username: user.username,
-        user: user.name,
-      };
-    });
+        setTweets(tweetSet);
 
-    const tweetSet = tweetCall.data.map((tweet) => {
-      const user = tweetCall.includes.users.find(
-        (user) => tweet.author_id === user.id,
-      );
-      return {
-        id: tweet.id,
-        text: tweet.text,
-        username: user.username,
-        user: user.user,
-        photo: user.profile_image_url,
-      };
-    });
+        getTweetImgs(searchValue, moreRequest).then((tweetImgs) => {
+          const imgSet = tweetImgs.data.map((tweet) => {
+            const user = tweetImgs.includes.users.find(
+              (user) => tweet.author_id === user.id,
+            );
+            const img = tweetImgs.includes.media.find(
+              (img) => tweet.attachments.media_keys[0] === img.media_key,
+            );
 
-    setTweetImgs(imgSet);
-    setTweets(tweetSet);
-    setTitleTag(searchValue);
-    setMoreRequest(moreRequest + 10);
+            return {
+              id: tweet.id,
+              img: img.url,
+              username: user.username,
+              user: user.name,
+            };
+          });
+
+          setTweetImgs(imgSet);
+          setTitleTag(searchValue);
+          setMoreRequest(moreRequest + 10);
+        });
+      })
+      .catch(() => {
+        setSearchResponse('Nenhum tweet foi achado, tente novamente... 😭');
+      });
   };
 
   useEffect(() => {
@@ -139,52 +142,18 @@ const Home = () => {
       return () => {
         if (tweets) {
         }
+
         setSearchResponse('');
         setSearchValue('');
       };
     }
   });
 
-  // get value from input field
-  function handleValue(e) {
-    if (e.keyCode === 13) {
-      const asyncPost = async () => {
-        await postData(e.target.value);
-      };
-      setSearchValue(
-        e.target.value.replace(/[^a-zA-Z0-9_]/g, '').replace(' ', ''),
-      );
-
-      setSearchResponse(<Loader />);
-      setResultsNumber(10);
-      setMoreRequest(10);
-
-      asyncPost();
-
-      //validations
-      if (e.target.value === '') {
-        setSearchResponse('É necessário digitar algo no campo de buscas...');
-        setSearchValue('');
-      }
-    }
-    if (e.keyCode === 8) {
-      setSearchResponse('');
-      setSearchValue('');
-      setTitleTag('');
-      setResultsNumber(0);
-    }
-    if (e.target.value.length >= 20) {
-      setSearchResponse('Limite de caracteres atingido! 🚨');
-    }
-  }
-
-  //scroll effects
   function handleScroll() {
     if (tweets) {
       const bottom =
         Math.ceil(window.innerHeight + window.scrollY) >=
         document.documentElement.scrollHeight;
-
       if (bottom) {
         setLoading(true);
         function fetchMoreData() {
@@ -211,20 +180,54 @@ const Home = () => {
           setShowScroll(false);
         }
       };
+
       window.addEventListener('scroll', checkScrollTop);
       window.addEventListener('scroll', handleScroll, {
         passive: true,
       });
     }
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
-
-  // scroll to top of page
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  function handleValue(e) {
+    if (e.keyCode === 13) {
+      const asyncPost = async () => {
+        await postData(e.target.value);
+      };
+
+      setSearchValue(
+        e.target.value.replace(/[^a-zA-Z0-9_]/g, '').replace(' ', ''),
+      );
+
+      setSearchResponse(<Loader />);
+      setResultsNumber(10);
+      setMoreRequest(10);
+
+      asyncPost();
+
+      if (e.target.value === '') {
+        setSearchResponse('É necessário digitar algo no campo de buscas...');
+        setSearchValue('');
+      }
+    }
+
+    if (e.keyCode === 8) {
+      setSearchResponse('');
+      setSearchValue('');
+      setTitleTag('');
+      setResultsNumber(0);
+    }
+
+    if (e.target.value.length >= 20) {
+      setSearchResponse('Limite de caracteres atingido 🚨.');
+    }
+  }
 
   return (
     <>
@@ -268,7 +271,7 @@ const Home = () => {
               <img
                 src={IconSearch}
                 onClick={() => {
-                  setSearchResponse(<Loader></Loader>);
+                  setSearchResponse(<Loader />);
                   setMoreRequest(10);
                   setSearchValue(
                     document
@@ -306,7 +309,6 @@ const Home = () => {
                 onClick={() => setAnimationMode(animationMode)}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                {/*  tweets ? styles.bgResponse : styles.bgResponseDisabled  */}
                 <div className={tweets ? styles.bgResponse : styles.bgLoader}>
                   <div className={styles.textResponse}>{searchResponse}</div>
                 </div>
@@ -332,16 +334,64 @@ const Home = () => {
                 return (
                   <Slide key={id}>
                     <div className={styles.bgImageGallery}>
-                      <img src={img} alt={user} height="287px" width="287px" />
+                      <img
+                        src={img}
+                        alt={user}
+                        height="287px"
+                        width="287px"
+                        onClick={() => {
+                          setImageActive({ user, username, img, id });
+                        }}
+                      />
                       <div className={styles.bgPostUser}>
-                        <p>Postado por:</p>
-                        <h3>@{username}</h3>
+                        <a
+                          href={`https://twitter.com/${username}/status/${id}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          alt={username}
+                        >
+                          <p>Postado por:</p>
+                          <h3>@{username}</h3>
+                        </a>
                       </div>
                     </div>
                   </Slide>
                 );
               })}
             </Slider>
+
+            {imageActive && (
+              <div
+                key={imageActive.id}
+                className={imageActive ? styles.modal : styles.modalDisabled}
+                onClick={() => {
+                  setImageActive(false);
+                }}
+              >
+                <div className={styles.modalContainer}>
+                  <img src={imageActive.img} alt={imageActive.username} />{' '}
+                  <button
+                    onClick={() => {
+                      setImageActive(false);
+                    }}
+                  >
+                    X
+                  </button>
+                  <div className={styles.modalData} id="modaldata">
+                    <a
+                      href={`https://twitter.com/${imageActive.username}/status/${imageActive.id}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      alt=""
+                    >
+                      <span>Postado por: </span>
+                      <h4>@{imageActive.username}</h4>
+                    </a>
+                  </div>
+                  <div className={styles.boxshadow}></div>
+                </div>
+              </div>
+            )}
           </section>
 
           <section className={styles.flexCard}>
@@ -358,14 +408,12 @@ const Home = () => {
               );
             })}
           </section>
-
           {loading ? (
             <motion.div
               initial={{ y: animationMode, opacity: 1 }}
               animate={{ y: animationMode, opacity: 0 }}
               onClick={() => setAnimationMode(animationMode)}
-              transition={{ duration: 20, delay: 0.4 }}
-              /* duration: 0.7, delay: 0.4  */
+              transition={{ duration: 0.7, delay: 0.4 }}
               className={styles.bgLoader}
             >
               <Loader />

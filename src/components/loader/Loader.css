@@ -14,3 +14,15 @@
 svg rect {
   fill: rgb(196, 47, 168);
 }
+
+
+@media screen and (max-width: 580px) {
+  .loader{
+    background-color: var(--titleOneColor);
+    height: max-content;
+    width: 100%;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin-top: 20px;
+  }
+}
