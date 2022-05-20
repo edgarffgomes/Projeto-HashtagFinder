@@ -1,31 +1,28 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import styles from "./Body.module.css";
 import { useAuth } from "../../contexts/Auth";
-import { useNavigate } from 'react-router-dom';
-import logoutIcon from "../../img/icon-power-off.svg"
+import { useNavigate } from "react-router-dom";
+import logoutIcon from "../../img/icon-power-off.svg";
 
-const Body = () => {
+const Body = ({ hashtags }) => {
   const auth = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
     auth.logout();
-    navigate('/', {replace: true})
-  }
+    navigate("/", { replace: true });
+  };
+
   return (
     <>
       <nav className={styles.bgNav}>
         <div className={styles.bgTitle}>
-          <Link to="/">
+          <Link to='/'>
             <h2>
               hashtag<strong>finder</strong>
             </h2>
           </Link>
-        </div>
-
-        <div className={styles.bgButton}>
-            <button onClick={handleLogout}><img src={logoutIcon}/> Sair</button>
         </div>
       </nav>
       <main>
@@ -37,56 +34,17 @@ const Body = () => {
             <span>Hora</span>
           </div>
           <div className={styles["table-body"]}>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
-            <div className={styles["table-body-line"]}>
-              <span className={styles.hashName}>#HashTagName</span>
-              <span>25/02</span>
-              <span>09:30</span>
-            </div>
+            {React.Children.toArray(
+              hashtags?.map(({ data, horario, hashtag }) => {
+                return (
+                  <div className={styles["table-body-line"]}>
+                    <span className={styles.hashName}>#{hashtag}</span>
+                    <span>{data.substring(0, 5)}</span>
+                    <span>{horario}</span>
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
       </main>

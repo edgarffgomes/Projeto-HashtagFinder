@@ -6,12 +6,40 @@
 
 .main-container {
   padding: 7.5rem 11.5rem 5.3125rem 11.5rem;
-  min-width: 100vw;
+  max-width: 500rem;
   min-height: 100vh;
 
   background-image: url("../../img/login-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.load-more {
+  font-size: 1rem;
+  font-family: var(--fontMain);
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 3rem;
+  cursor: pointer;
+
+  border: 1px solid var(--button-color-hover2);
+  background-color: var(--button-color-hover2);
+
+  transition: filter 0.5s;
+}
+
+.load-more:hover {
+  filter: brightness(0.7);
 }
 
 @media (max-width: 850px) {
