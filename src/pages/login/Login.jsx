@@ -9,9 +9,6 @@ import iconHome from '../../img/icon-home.svg';
 
 const Login = ()=>{
 
-  //parâmetros para filtrar dados a serem recebidos pela APO
-  const squad = "260422";
-
   const [user, setUser] = useState('');
 
   const [password, setPassword] = useState('');
@@ -38,10 +35,11 @@ const Login = ()=>{
     ).then((response) => response.json())
         .then(function (database) {
           database.records.map((data)=>{
-          if(data.fields.Email == user && data.fields.Senha == password){
+          if(data.fields.Email === user && data.fields.Senha === password){
             auth.login(true);
             navigate('/search', {replace: true});
           }
+          return null
         })
         document.getElementById('messageError').innerHTML = 'Atenção! Seus dados são inválidos!'
       })
