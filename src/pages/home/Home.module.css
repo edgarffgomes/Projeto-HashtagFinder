@@ -454,6 +454,29 @@ span {
   .bgInputSearch input{
     font-size: 17px;
   }
+
+  .modalContainer {
+    width: 90%;
+    height: 50%;
+  }
+  .modalContainer button{
+   font-size: 32px;
+   padding: 12px 20px;
+  }
+
+  .modalData{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modalData span{
+    font-size: 22px;
+  }
+  .modalData h4{
+    font-size: 25px;
+  }
+
 }
 
 /* RESPONSIVO CARDS TWITTER */
