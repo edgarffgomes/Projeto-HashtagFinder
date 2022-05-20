@@ -14,11 +14,11 @@
 
 ## Introdução
 
-Hashtag Finder é um projeto para fazer buscas das publicações mais recentes da # pesquisada.
+Hashtag Finder é um projeto para fazer buscas das # mais recentes da pesquisa realizada.
 
 - **Simples de começar**
 
-> O Hashtag Finder é construído de forma que possa ser executado no menor tempo possível. Criamos o Hashtag Finder para lidar com o processo de buscas do site (twitter) para que você possa se concentrar em somente nas publicações mais recentes.
+> O Hashtag Finder é construído de forma que possa ser utilizado da forma mais prática possível. O projeto foi criado para lidar com o processo de buscas do site (twitter) para que você possa se concentrar somente nas publicações mais recentes.
 
 - **Buscas**
 
