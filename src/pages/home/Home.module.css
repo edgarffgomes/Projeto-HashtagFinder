@@ -15,6 +15,16 @@
   box-shadow: inset 0 -40px var(--titleOneColor);
 }
 
+/* HEADER DESABILITADO */
+.bgHeaderDisabled{
+  height: 790px;
+  width: 100%;
+  background-image: url('../../img/hero-bg.jpg');
+  background-size: cover;
+  box-shadow: inset 0 -40px var(--titleOneColor);
+  margin-bottom: 100px; 
+}
+
 /* ESTILIZA OS TEXTOS DO CABEÇALHO */
 .bgTitle{
   margin-left: 140px;
@@ -71,7 +81,7 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 
 /* INPUT DE PESQUISA */
 .bgInputSearch input {
-  width: 100%;
+  width: 95%;
   border: none;
   border-radius: 72px;
   outline: none;
@@ -89,6 +99,11 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   width: 100%;
   display: block;
   justify-content: center;
+}
+
+/* MAIN DESABILITADA */
+.bgMainDisabled {
+  display: none;
 }
 
 .bgDisplaySearch{
@@ -117,33 +132,202 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
 }
 
 /* ESTILIZAÇÃO DA GALERIA */
+/* .bgImageGallery{
+  display: flex;
+}
+ */
 .bgImageGallery img{
   box-shadow: 8px 14px 30px var(--color-box-shadow);
   border-radius: 21px;
   padding: 5px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-.bgImageGallery p{
+.bgPostUser{
   position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 215px;
-  padding-left: 20px;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 21px;
   color: var(--titleOneColor);
-  font: normal normal normal 17px/19px Rubik;
-  text-align: left;
+  font-family: var(--fontMain);
+  background-color: rgba( 255, 255, 255, 0.35 );
+  backdrop-filter: blur( 13.5px );
+  box-shadow: 8px 14px 30px var(--color-box-shadow);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 16px;
 }
 
-.bgImageGallery span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 240px;
-  padding-left: 20px;
-  color: var(--titleOneColor);
-  font: 21px/23px var(--fontMain);
-  text-align: left;
+.bgPostUser p{
+padding-bottom: 6px;
 }
+
+.bgPostUser a{
+color: var(--titleOneColor);
+}
+
+.bgImageGallery:hover .bgPostUser a {
+  color: var(--button-color);
+}
+
+
+/* MODAL */
+.modalContainer {
+  background-color: #fff;
+  width: 45vw;
+  margin: 3.5vw auto 0 auto;
+  height: 85vh;
+  box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 0.78);
+  border-radius: 1.25rem;
+  position: absolute;
+  display: flex;
+  z-index: 3;
+}
+
+.modalContainer img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  -webkit-box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 0.78);
+}
+
+.modalContainer button {
+  font-size: 15px;
+  cursor: pointer;
+  right: 0;
+  font-weight: Bold;
+  border: none;
+  background: none;
+  position: absolute;
+  background-color: var(--titleOneColor);
+  margin: 10px;
+  padding: 6px 10px;
+  max-height: 55px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 0.78);
+  text-align: center;
+  color: var(--button-color);
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  backdrop-filter: blur(12px);
+}
+
+.modalDisabled{
+  display: none;
+}
+
+.modalData {
+  position: absolute;
+  bottom: 0;
+  padding: 0 10px;
+  opacity: 1;
+  background-color: var(--titleOneColor);
+  font-weight: bold;
+  z-index: 2;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.modalData h4:hover {
+  color: var(--button-color-hover);
+}
+
+.modalData h4,
+span {
+  color: var(--button-color);
+  font-size: 16px;
+  font-family: var(--fontMain);
+}
+
+
+.modalData span {
+  font-weight: lighter;
+}
+
+.boxShadow {
+  box-shadow: inset 0 -90px 20px -60px rgba(0, 0, 0, 0.651);
+  width: 100%;
+  z-index: 0;
+  height: 50px;
+  display: fixed;
+  z-index: 0;
+  border-radius: 1.25rem;
+  bottom: 0;
+  position: absolute;
+}
+
+
+/* RESPOSTA DO CAMPO INPUT */
+.bgResponse{
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+    z-index: 2000;
+    width: 100%;
+    height: 200px;
+}
+
+/* RESPOSTA DO INPUT DESABILITADA */
+.bgResponseDisabled{
+  margin-top: 50px;
+}
+
+.textResponse{
+  font-size: 24px;
+  font-family: var(--fontMain);
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+/* SCROLL */
+.bgTopScroll {
+  display: flex;
+  height: 80px;
+  min-width: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ESTILIZA O SVG PARA RETORNAR AO INICIO DA PÁGINA */
+.bgSvg{
+  color: var(--button-color);
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.bgSvg:hover{
+  color: var(--button-color-hover);
+}
+
+/* LOADER */
+ .bgLoader{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 200px;
+} 
+
 
 /* RESPONSIVO HOME DESKTOP */
 @media screen and (max-width: 1112px) {
@@ -184,13 +368,19 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
     justify-content: left;
   }
   .bgImageGallery p {
-    padding-top: 200px;
+    padding-top: 0;
   }
   .bgImageGallery span {
     font-size: 18px;
   }
   .bgDisplaySearch{
     margin: 100px 50px;
+  }
+
+  .bgPostUser{
+    margin-left: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
   }
 }
 
@@ -214,6 +404,15 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
     height: 520px;
     box-shadow: none;
     background-image: url('../../img/hero-bg-mobile.jpg');
+  }
+  /* HEADER DESABILITADO */
+  .bgHeaderDisabled{
+    height: 87vh;
+    width: 100%;
+    background-image: url('../../img/hero-bg-mobile.jpg');
+    background-size: cover;
+    box-shadow: none;
+    margin-bottom:0; 
   }
   /* BACKGROUND DO TITULO*/
   .bgTitle {
@@ -255,6 +454,29 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   .bgInputSearch input{
     font-size: 17px;
   }
+
+  .modalContainer {
+    width: 90%;
+    height: 50%;
+  }
+  .modalContainer button{
+   font-size: 32px;
+   padding: 12px 20px;
+  }
+
+  .modalData{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modalData span{
+    font-size: 22px;
+  }
+  .modalData h4{
+    font-size: 25px;
+  }
+
 }
 
 /* RESPONSIVO CARDS TWITTER */
@@ -300,15 +522,23 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
     width: 200px;
   }
 }
+@media screen and (min-width: 581px) and (max-width: 768px) {
+  .bgHeaderDisabled{
+    height: 660px;
+  }
+}
+
+
 
 @media screen and (max-width: 480px) {
   .bgImageGallery img{
     width: 160px;
   }
+
   .bgImageGallery p {
-    padding-top: 160px;
-    font-size: 16px;
+    padding-top: 0;
   }
+
   .bgImageGallery span {
     padding-top: 200px;
     font-size: 13px;
@@ -322,5 +552,11 @@ box-shadow: 20px 15px 20px var(--color-box-shadow);
   .bgMain h2{
     font-size: 22px;
     text-align: center;
+  }
+
+  .bgPostUser{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 12.5px;
   }
 }

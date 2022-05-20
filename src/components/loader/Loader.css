@@ -1,0 +1,28 @@
+.loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 10000;
+}
+
+.loader svg path,
+svg rect {
+  fill: rgb(196, 47, 168);
+}
+
+
+@media screen and (max-width: 580px) {
+  .loader{
+    background-color: var(--titleOneColor);
+    height: max-content;
+    width: 100%;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin-top: 20px;
+  }
+}
