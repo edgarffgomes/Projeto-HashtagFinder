@@ -104,6 +104,7 @@ const Home = () => {
             photo: user.profile_image_url,
           };
         });
+
         setImageActive(false);
 
         setTweets(tweetSet);
@@ -270,7 +271,7 @@ const Home = () => {
               <img
                 src={IconSearch}
                 onClick={() => {
-                  setSearchResponse(<Loader></Loader>);
+                  setSearchResponse(<Loader />);
                   setMoreRequest(10);
                   setSearchValue(
                     document
@@ -308,7 +309,6 @@ const Home = () => {
                 onClick={() => setAnimationMode(animationMode)}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                {/*  tweets ? styles.bgResponse : styles.bgResponseDisabled  */}
                 <div className={tweets ? styles.bgResponse : styles.bgLoader}>
                   <div className={styles.textResponse}>{searchResponse}</div>
                 </div>
@@ -413,8 +413,7 @@ const Home = () => {
               initial={{ y: animationMode, opacity: 1 }}
               animate={{ y: animationMode, opacity: 0 }}
               onClick={() => setAnimationMode(animationMode)}
-              transition={{ duration: 20, delay: 0.4 }}
-              /* duration: 0.7, delay: 0.4  */
+              transition={{ duration: 0.7, delay: 0.4 }}
               className={styles.bgLoader}
             >
               <Loader />
