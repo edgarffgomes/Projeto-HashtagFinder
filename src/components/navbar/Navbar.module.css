@@ -142,12 +142,25 @@
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 424px) {
   .bgTitle h2 {
     font-size: 12px;
   }
   .bgButton button {
-    height: 50px;
-    width: 70px;
+    height: 30px;
+   /*  width: 70px; */
+  }
+  .bgButton{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .bgButton a{
+    margin-right: 0;
+  }
+  .bgButton a:first-child{
+    margin-right: 0;
   }
 }
