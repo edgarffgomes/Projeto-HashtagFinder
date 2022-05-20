@@ -1,7 +1,8 @@
+/* Editando nav */
 .container nav {
 	position: absolute;
 }
-
+/* Editando container do body */
 body .container{
 	background-image: url("../../img/login-bg.jpg");
 	background-size: cover;
@@ -16,17 +17,19 @@ body .container{
 	align-items: center;
 	justify-content: center;
 }
-
+/* Editando container do login */
 .loginContainer{
 	display: flex;
 	flex-direction: column;
+	text-align: center;
 	margin: 236px auto;
 	width: 553px;
 	height: 608px;
+	color: red;
 	background: #FFFFFF;
-	color:  black;
 	border-radius: 14px;
 }
+/* Editando formulário de login */
 .loginForm{
 	width: 82.64%;
 	margin: 131px auto;
@@ -57,6 +60,7 @@ input::placeholder{
 	border:  none;
 	border-bottom: 2px solid #E9E9F0;
 }
+/* Editando botão de acesso */
 .accessButton{
 	display: flex;
 	background: #3633F7;
@@ -73,12 +77,16 @@ input::placeholder{
 	letter-spacing: 0.57px;
 	cursor: pointer;
 }
+
+/* media query para telas até 1200px */
 @media  screen and (max-width: 1200px) {
+	/* Editando container do login */
 	.loginContainer{
 		width: 460px;
 		height: 460px;
 		margin: 181px 37px;
 	}
+	/* Editando formulário de login */
 	.loginForm{
 		margin-top: 62px;
 	}
@@ -94,6 +102,7 @@ input::placeholder{
 	.passwordSection{
 		margin-top: 72px;
 	}
+	/* Editando botão de acesso */
 	.accessButton{
 		margin-top: 40px;
 		height: 58px;
@@ -101,18 +110,22 @@ input::placeholder{
 		font-size: 18px;
 	}
 }
+/* media query para telas 800px */
 @media  screen and (max-width: 800px) {
+	/* Editando container do login */
 	.loginContainer{
 		width: 350px;
 	}
+	/* Editando botão de acesso */
 	.accessButton{
 		font-size: 15px;
 		letter-spacing: 0;
 		font-weight: bolder;
 	}
 }
-
+/* media query para telas 400px */
 @media  screen and (max-width: 400px) {
+	/* Editando container do login */
 		.loginContainer{
 			width: 300px
 		}

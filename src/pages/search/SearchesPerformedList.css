@@ -1,5 +1,7 @@
-.bgNav nav {
+.backgroundNav  {
   position: absolute;
+  background: red;
+  height: 90px;
 }
 
 .main-container {
