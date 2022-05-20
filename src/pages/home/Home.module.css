@@ -407,7 +407,7 @@ span {
   }
   /* HEADER DESABILITADO */
   .bgHeaderDisabled{
-    height: 85vh;
+    height: 87vh;
     width: 100%;
     background-image: url('../../img/hero-bg-mobile.jpg');
     background-size: cover;
