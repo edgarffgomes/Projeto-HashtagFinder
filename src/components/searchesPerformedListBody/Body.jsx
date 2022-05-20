@@ -9,9 +9,9 @@ const Body = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const handleLogout = (e) => {
     auth.logout();
-    console.log(auth)
+    navigate('/', {replace: true})
   }
   return (
     <>

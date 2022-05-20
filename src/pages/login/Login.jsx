@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import { useAuth } from "../../contexts/Auth";
 import { useNavigate } from 'react-router-dom';
 import style from './Login.module.css';
@@ -8,8 +8,6 @@ import Navbar from '../../components/navbar/Navbar';
 import iconHome from '../../img/icon-home.svg';
 
 const Login = ()=>{
-  //array que receberá dados da API
-  const apiData = [];
 
   //parâmetros para filtrar dados a serem recebidos pela APO
   const squad = "260422";
@@ -22,43 +20,31 @@ const Login = ()=>{
 
   const navigate = useNavigate();
 
-  //useEffect para receber dados de login da API ao renderizar aplicação
-  useEffect(() => async function getData() {
-    var Airtable = require('airtable');
-    var base = new Airtable({apiKey: 'key2CwkHb0CKumjuM'}).base('app6wQWfM6eJngkD4');
-
-    base('Login').select({
-        // Selecionando os 8 primeiros registros da API
-        maxRecords: 8,
-        view: "Grid view"
-    })
-      // Esta função (`page`)será chamada para cada página de Records.
-      .eachPage(function page(records, fetchNextPage) {
-        
-
-         records.forEach(function(record) {
-            if(record.fields.Squad == squad){
-              apiData.push(record.fields)
-            }
-        });
-
-        // Para realizar fetch na próxima página de records, chame `fetchNextPage`.
-        // Se há mais records, `page` será chamada novamente.
-        // Se não há mais records, `done` será chamada.
-        fetchNextPage();
-
-    }, function done(err) {
-        //Verificação de erros ao chamar API
-        if (err) { console.error(err); return; }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }
-  , [])
+  
 
 
-  const handleSubmit = () => {
-    auth.login(true);
-    navigate('/search', { replace: true })
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(
+      'https://api.airtable.com/v0/app6wQWfM6eJngkD4/Login?maxRecords=8&view=Grid%20view&filterByFormula={Squad}=260422',
+       {
+        method: 'GET',
+        headers: {
+          Authorization: 'Bearer key2CwkHb0CKumjuM',
+        },
+      },
+    ).then((response) => response.json())
+        .then(function (database) {
+          database.records.map((data)=>{
+          if(data.fields.Email == user && data.fields.Senha == password){
+            auth.login(true);
+            navigate('/search', {replace: true});
+          }
+        })
+        document.getElementById('messageError').innerHTML = 'Atenção! Seus dados são inválidos!'
+      })
   }
 
 
