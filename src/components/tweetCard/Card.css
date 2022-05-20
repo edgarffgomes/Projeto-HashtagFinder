@@ -118,5 +118,9 @@
   .cardContainer a span {
     font-weight: normal;
   }
+  
+  .cardContainer {
+    padding: 0;
+  }
 
 }

@@ -154,8 +154,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    gap: 20px;
+    /* margin-top: 50px; */
+    gap: 10px;
   }
   .bgButton a{
     margin-right: 0;
