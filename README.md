@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <p align="center">Hashtag Finder</p>
+  <a href="https://tweethashtagfinder.netlify.app/"><img src="./public/readme.png" alt="HashtagFinder"></a>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
 
-## Available Scripts
+<a href="https://github.com/facebook/docusaurus/actions/workflows/tests.yml"><img src="https://github.com/facebook/docusaurus/actions/workflows/tests.yml/badge.svg" alt="GitHub Actions status"></a>
+<a href= "https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
+<a href="#license"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
+<a href="https://tweethashtagfinder.netlify.app/"><img src="https://api.netlify.com/api/v1/badges/9e1ff559-4405-4ebe-8718-5e21c0774bc8/deploy-status" alt="Netlify Status"></a>
 
-In the project directory, you can run:
+</p>
 
-### `npm start`
+## Introdução
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Hashtag Finder é um projeto para fazer buscas das publicações mais recentes da # pesquisada.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Simples de começar**
 
-### `npm test`
+> O Hashtag Finder é construído de forma que possa ser executado no menor tempo possível. Criamos o Hashtag Finder para lidar com o processo de buscas do site (twitter) para que você possa se concentrar em somente nas publicações mais recentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Buscas**
 
-### `npm run build`
+> É possível fazer login no site para poder ver as últimas pesquisas realizadas, na data e no horário que foram feitas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Site**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Para acessar o site clique no botão abaixo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a href="https://tweethashtagfinder.netlify.app/"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Clique Aqui"></a>
 
-### `npm run eject`
+## Contato
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Linkedin:
+  - [Alexandre Junior](https://www.linkedin.com/in/alexandrejuniorc/) Encarregado pela página Home.
+  - [Edgar Gomes](https://www.linkedin.com/in/edgar-gomes-678b61163/) Encarregado pela página de Login.
+  - [Thiago Morato](https://www.linkedin.com/in/thiago-silva-morato/) Encarregado pela página de Buscas.
+  - [João Victor Casado](https://www.linkedin.com/in/joaovictorcasado/) Encarregado pela página Sobre.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contribuidores
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Este projeto existe graças a todas as pessoas que contribuem.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<a href='https://github.com/alexandrejuniorc'><img src='https://avatars.githubusercontent.com/u/62450352?s=400&u=13fda0d7661dad6c3bf315009bd9f98ee38e1794&v=4' width='120' style='border-radius: 50%'/></a>
+<a href='https://github.com/edgarffgomes'><img src='https://avatars.githubusercontent.com/u/57186828?v=4' width='120' style='border-radius: 50%'/></a>
+<a href='https://github.com/ThiagoSilvaMorato'><img src='https://avatars.githubusercontent.com/u/96215280?v=4' width='120' style='border-radius: 50%'/></a>
+<a href='https://github.com/joaovictorcasado'><img src='https://avatars.githubusercontent.com/u/71366644?v=4' width='120' style='border-radius: 50%'/></a>
 
-## Learn More
+## Apoiadores
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Obrigado a todos os nossos apoiadores!🙏
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://www.linkedin.com/in/andersonarcenio/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQF_jgGPE93Osw/profile-displayphoto-shrink_100_100/0/1516663660813?e=1658361600&v=beta&t=S4ax3XUKdzyJttlPzdhIqwc5CWzreNtd_EA1K9zcEMs" width='120' style='border-radius: 50%'></a>
+<a href="https://www.linkedin.com/in/karina-amaral/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFYOWMd-J0T1Q/profile-displayphoto-shrink_100_100/0/1633722455211?e=1658361600&v=beta&t=1MNOgct2avMTIQqyBU5Fi6sj7MlNn1qkEdAvqo6ceE8" width='120' style='border-radius: 50%'></a>
+<a href="https://www.linkedin.com/in/fernando-duro-71628138/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQF-cblcx55RXQ/profile-displayphoto-shrink_100_100/0/1643841290909?e=1658361600&v=beta&t=RnZADaE-PdwLC7NEkdSKEF9ffGyEpzzUnPcJPiGVQds" width='120' style='border-radius: 50%'></a>
+<a href="https://www.linkedin.com/in/izabele-leme/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFqRkRh6m1DGw/profile-displayphoto-shrink_200_200/0/1620849511237?e=1658361600&v=beta&t=0qdegmLrxFLKahTVbQ-wpIDJeLIxDbv0g1NcHYDxoKo" width='120' style='border-radius: 50%'></a>
