@@ -9,7 +9,7 @@ const Body = ({ hashtags }) => {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = (e) => {
+  const handleLogout = () => {
     auth.logout();
     navigate("/", { replace: true });
   };
@@ -23,6 +23,9 @@ const Body = ({ hashtags }) => {
               hashtag<strong>finder</strong>
             </h2>
           </Link>
+        </div>
+        <div className={styles.bgButton}>
+          <button onClick={handleLogout}><img src={logoutIcon} alt={"Botão de Logout"}/> Sair</button>
         </div>
       </nav>
       <main>
