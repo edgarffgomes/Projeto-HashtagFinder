@@ -29,8 +29,15 @@
 
 .paragraph {
   max-width: 753px;
-  font: 1.5625rem /35px 'Rubik', sans-serif;
+  font: 1rem /35px 'Rubik', sans-serif;
   color: var(--paragraphColor);
+}
+
+.paragraph a{
+  color: var(--button-color);
+}
+.paragraph a:hover{
+  color: var(--button-color-hover);
 }
 
 .paragraphTitle {

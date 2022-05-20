@@ -98,7 +98,7 @@ const About = () => {
 
             Ele é usado pra renderizar um conteúdo dinâmico
             */}
-            <p dangerouslySetInnerHTML={{ __html: texto }}></p>
+            <p dangerouslySetInnerHTML={{ __html: texto }} />
           </div>
           <div className={styles.containerIllustration}>
             <img
