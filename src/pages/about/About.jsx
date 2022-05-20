@@ -157,14 +157,3 @@ const About = () => {
   );
 };
 export default About;
-
-{
-  /* {dados.map((item) => (
-          <Members
-            key={item.id}
-            img={item.fields.Imagem[0].url}
-            name={item.fields.Nome}
-            text={item.fields['Descrição']}
-          />
-        ))} */
-}
