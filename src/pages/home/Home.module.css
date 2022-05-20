@@ -465,7 +465,7 @@ span {
   }
 
   .modalData{
-    width: 200px;
+    width: max-content;
     display: flex;
     justify-content: center;
     padding: 20px;
