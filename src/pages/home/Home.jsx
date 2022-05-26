@@ -14,6 +14,7 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 // CARROUSEL SLIDER
 import { Slider, Slide } from '../../components/slider/ExportPattern';
+import { settingSlider } from '../../components/slider/Settings';
 // TWEET CARDS
 import Card from '../../components/tweetCard/Card';
 // METHOD POST TWEETS
@@ -40,54 +41,51 @@ const Home = () => {
   const [scrollTopButton, setTopButton] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
 
-  //navbar effect
   useEffect(function () {
-    function posicaoScroll() {
+    //navbar effect
+    const posicaoScroll = () => {
       if (window.scrollY > 750) {
         setAtivaNav(true);
       } else {
         setAtivaNav(false);
       }
-    }
+    };
     window.addEventListener('scroll', posicaoScroll);
   }, []);
 
-  // carrousel settings
-  const settings = {
-    spaceBetween: 1,
-    slidesPerView: 5,
-    navigation: true,
-    pagination: {
-      clickable: true,
-    },
-    breakpoints: {
-      1920: {
-        slidesPerView: 5,
-        width: 1920,
-        spaceBetween: 100,
-      },
-      1112: {
-        slidesPerView: 3,
-        width: 1112,
-        spaceBetween: 100,
-      },
-      768: {
-        slidesPerView: 3,
-        width: 768,
-        spaceBetween: 200,
-      },
-      481: {
-        slidesPerView: 3,
-        width: 481,
-        spaceBetween: 200,
-      },
-      375: {
-        slidesPerView: 3,
-        width: 375,
-        spaceBetween: 185,
-      },
-    },
-  };
+  useEffect(() => {
+    if (tweets) {
+      const checkScrollTop = () => {
+        if (!showScroll && window.pageYOffset > 400) {
+          setShowScroll(true);
+        } else if (showScroll && window.pageYOffset <= 400) {
+          setShowScroll(false);
+        }
+      };
+
+      window.addEventListener('scroll', checkScrollTop);
+      window.addEventListener('scroll', handleScroll, {
+        passive: true,
+      });
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
+  useEffect(() => {
+    if (searchValue) {
+      asyncCall();
+      return () => {
+        if (tweets) {
+        }
+
+        setSearchResponse('');
+        setSearchValue('');
+      };
+    }
+  });
 
   const asyncCall = () => {
     getTweets(searchValue, moreRequest)
@@ -133,23 +131,11 @@ const Home = () => {
       })
       .catch(() => {
         setSearchResponse('Nenhum tweet foi achado, tente novamente... 😭');
+        setTweets();
       });
   };
 
-  useEffect(() => {
-    if (searchValue) {
-      asyncCall();
-      return () => {
-        if (tweets) {
-        }
-
-        setSearchResponse('');
-        setSearchValue('');
-      };
-    }
-  });
-
-  function handleScroll() {
+  const handleScroll = () => {
     if (tweets) {
       const bottom =
         Math.ceil(window.innerHeight + window.scrollY) >=
@@ -169,33 +155,13 @@ const Home = () => {
         setTimeout(() => setTopButton(true), 3000);
       }
     }
-  }
+  };
 
-  useEffect(() => {
-    if (tweets) {
-      const checkScrollTop = () => {
-        if (!showScroll && window.pageYOffset > 400) {
-          setShowScroll(true);
-        } else if (showScroll && window.pageYOffset <= 400) {
-          setShowScroll(false);
-        }
-      };
-
-      window.addEventListener('scroll', checkScrollTop);
-      window.addEventListener('scroll', handleScroll, {
-        passive: true,
-      });
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  function handleValue(e) {
+  const handleValue = (e) => {
     if (e.keyCode === 13) {
       const asyncPost = async () => {
         await postData(e.target.value);
@@ -227,7 +193,7 @@ const Home = () => {
     if (e.target.value.length >= 20) {
       setSearchResponse('Limite de caracteres atingido 🚨.');
     }
-  }
+  };
 
   return (
     <>
@@ -329,7 +295,7 @@ const Home = () => {
           null}
 
           <section>
-            <Slider settings={settings}>
+            <Slider settings={settingSlider}>
               {tweetImgs?.map(({ user, username, img, id }) => {
                 return (
                   <Slide key={id}>
