@@ -1,13 +1,13 @@
 @import '../../components/navbar/Navbar.module.css';
 
-.bgNavbar{
+.bgNavbar {
   position: absolute;
-
 }
 
 .bgAbout {
   display: flex;
-  background: url(../../img/about-bg.jpg) center center/cover no-repeat padding-box;
+  background: url(../../img/about-bg.jpg) center center/cover no-repeat
+    padding-box;
   width: 100%;
 }
 
@@ -33,10 +33,10 @@
   color: var(--paragraphColor);
 }
 
-.paragraph a{
+.paragraph a {
   color: var(--button-color);
 }
-.paragraph a:hover{
+.paragraph a:hover {
   color: var(--button-color-hover);
 }
 
@@ -144,8 +144,7 @@
 }
 
 .photo {
-  width: 70%;
-  max-width: 203px;
+  min-width: 170px;
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
@@ -153,15 +152,18 @@
 
 .name {
   font: bold 2rem/35px 'Rubik', sans-serif;
-  margin: 25px auto 25px auto;
+  max-height: 35px;
+  margin: 25px auto 45px auto;
   color: var(--paragraphColor);
 }
 
 .paragraphResume {
   margin-bottom: 25px;
   font: normal normal normal 19px/25px Rubik;
-  letter-spacing: .23px;
-  min-height: 90px;
+  letter-spacing: 0.23px;
+  border: solid 2px blue;
+  min-height: 205px;
+  /* max-height: 170px; */
   color: var(--paragraphColor);
   text-align: center;
 }
@@ -173,7 +175,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 39.16px;
- 
 }
 
 @media screen and (max-width: 1112px) {
@@ -200,6 +201,7 @@
     margin-top: 36px;
   }
 
+  
   .title {
     font: bold 1.57143rem/29px 'Rubik', sans-serif;
   }
@@ -207,12 +209,12 @@
   .name {
     margin: 22px auto 24px auto;
     font: bold 2rem/31px 'Rubik', sans-serif;
-
   }
 
   .paragraphResume {
     margin-bottom: 22.14px;
-    font:  1.35714rem/25px 'Rubik', sans-serif;
+    font: 1.35714rem/25px 'Rubik', sans-serif;
+    min-height: unset;
   }
 
   .socialIcons {

@@ -118,7 +118,7 @@ const About = () => {
                   src={item.fields.Imagem[0].url}
                   alt="foto joão"
                 />
-                <span>
+                <span className={styles.containerInfo}>
                   <h3 className={styles.name}>{item.fields.Nome}</h3>
                   <p className={styles.paragraphResume}>
                     {item.fields['Descrição']}
