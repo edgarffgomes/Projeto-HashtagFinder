@@ -1,14 +1,19 @@
 import {createContext, useContext, useState} from "react";
-
+ 
 const AuthContext = createContext(null);
 
+
+
 export  const AuthProvider = ({ children }) =>{
-	const [isLogged, setIsLogged] = useState(null);
+	const [isLogged, setIsLogged] = useState();
+
 
 	const login  = (isLogged) => {
+		localStorage.setItem('Login', true);
 		setIsLogged(isLogged);
 	}
 	const logout = () => {
+		localStorage.clear();
 		setIsLogged(null);
 	}
 

@@ -1,9 +1,7 @@
 import { Navigate} from 'react-router-dom';
-import { useAuth } from './Auth';
 export const CheckLogin = ({ children }) =>{
-	const auth = useAuth();
 	
-	if(auth.isLogged){
+	if(localStorage.getItem('Login') !== null){
 		return <Navigate to='/search'/>
 	}
 

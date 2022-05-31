@@ -4,14 +4,14 @@ import styles from "./Body.module.css";
 import { useAuth } from "../../contexts/Auth";
 import { useNavigate } from "react-router-dom";
 import logoutIcon from "../../img/icon-power-off.svg";
+import homeIcon from "../../img/icon-home.svg";
 
 const Body = ({ hashtags }) => {
   const auth = useAuth();
   const navigate = useNavigate();
-
   const handleLogout = () => {
     auth.logout();
-    navigate("/", { replace: true });
+    navigate("/login", { replace: true });
   };
 
   return (
@@ -24,8 +24,13 @@ const Body = ({ hashtags }) => {
             </h2>
           </Link>
         </div>
+        <div className={styles.buttons}>
         <div className={styles.bgButton}>
-          <button onClick={handleLogout}><img src={logoutIcon} alt={"Botão de Logout"}/> Sair</button>
+          <button className={styles.buttonLogout} onClick={()=>handleLogout()}><img src={logoutIcon} alt={"Botão de Logout"}/> Sair </button>
+        </div>
+        <div className={styles.bgButton}>
+          <button className={styles.buttonHome} onClick={()=>navigate('/')}><img src={homeIcon} alt={"Botão da Home"}/> Home </button>
+        </div>
         </div>
       </nav>
       <main>

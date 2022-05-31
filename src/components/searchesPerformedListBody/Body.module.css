@@ -29,6 +29,12 @@
 .bgTitle strong {
   font-weight: bold;
 }
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .bgButton{
   display: flex;
   justify-content: center;
@@ -38,8 +44,9 @@
 .bgButton button{
   height: 50px;
   width: 170px;
-  background: #3633F7;
   color: #FFF;
+  padding: 1px 6px;
+  margin:  0px 7.5px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
@@ -52,7 +59,12 @@
   letter-spacing: 2.55px;
   text-transform: uppercase;
 }
-
+.buttonLogout{
+  background: #3633F7;
+}
+.buttonHome{
+  background: #d842bd;
+}
 .bgButton img{
   margin-right: 8px;
 }
@@ -240,6 +252,10 @@
 
 /* RESPONSIVO NAVBAR MOBILE */
 @media screen and (max-width: 540px) {
+  .buttons{
+    flex-direction: column;
+    gap: 10px;
+  }
   /* TITULO DA NAVEGAÇÃO */
   .bgTitle h2 {
     font-size: 19px;
@@ -263,8 +279,7 @@
     font-size: 12px;
   }
   .bgButton button {
-    height: 50px;
-    width: 70px;
+    height: 30px;
   }
 }
 
