@@ -12,10 +12,10 @@
   margin-right: 45px;
 }
 
- .swiper-slide{
+/*  .swiper-slide{
   width: max-content;
   margin-right: 45px;
-} 
+}  */
 
 /*
  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
@@ -79,6 +79,7 @@
   .swiper-button-disabled,
   .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
     background: transparent;
+    box-shadow: none;
   }
 }
 

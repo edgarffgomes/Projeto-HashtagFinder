@@ -41,7 +41,6 @@ const Home = () => {
   const [scrollTopButton, setTopButton] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
 
-  //
   useEffect(() => {
     if (searchValue) {
       asyncCall();
