@@ -1,6 +1,7 @@
 // carrousel settings
 export const settingSlider = {
   spaceBetween: 1,
+  width: 'max-content',
   slidesPerView: 5,
   navigation: true,
   pagination: {
@@ -13,9 +14,9 @@ export const settingSlider = {
       spaceBetween: 100,
     },
     1112: {
-      slidesPerView: 3,
+      slidesPerView: 5,
       width: 1112,
-      spaceBetween: 100,
+      spaceBetween: 260,
     },
     768: {
       slidesPerView: 3,
