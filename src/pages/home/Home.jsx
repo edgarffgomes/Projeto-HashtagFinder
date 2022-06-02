@@ -56,14 +56,10 @@ const Home = () => {
 
   useEffect(() => {
     if (tweets) {
-      window.addEventListener(
-        'scroll',
-        checkScrollTop,
-        posicaoScroll,
-        handleScroll,
-        { passive: true },
-      );
+      window.addEventListener('scroll', handleScroll);
     }
+
+    window.addEventListener('scroll', posicaoScroll, checkScrollTop);
   }, []);
 
   // navbar effect
