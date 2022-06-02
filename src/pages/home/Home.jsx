@@ -41,51 +41,47 @@ const Home = () => {
   const [scrollTopButton, setTopButton] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(function () {
-    //navbar effect
-    const posicaoScroll = () => {
-      if (window.scrollY > 750) {
-        setAtivaNav(true);
-      } else {
-        setAtivaNav(false);
-      }
-    };
-    window.addEventListener('scroll', posicaoScroll);
-  }, []);
-
-  useEffect(() => {
-    if (tweets) {
-      const checkScrollTop = () => {
-        if (!showScroll && window.pageYOffset > 400) {
-          setShowScroll(true);
-        } else if (showScroll && window.pageYOffset <= 400) {
-          setShowScroll(false);
-        }
-      };
-
-      window.addEventListener('scroll', checkScrollTop);
-      window.addEventListener('scroll', handleScroll, {
-        passive: true,
-      });
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
-
+  //
   useEffect(() => {
     if (searchValue) {
       asyncCall();
       return () => {
         if (tweets) {
         }
-
         setSearchResponse('');
         setSearchValue('');
       };
     }
   });
+
+  useEffect(() => {
+    if (tweets) {
+      window.addEventListener(
+        'scroll',
+        checkScrollTop,
+        posicaoScroll,
+        handleScroll,
+        { passive: true },
+      );
+    }
+  }, []);
+
+  // navbar effect
+  const posicaoScroll = () => {
+    if (window.scrollY > 750) {
+      setAtivaNav(true);
+    } else {
+      setAtivaNav(false);
+    }
+  };
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
 
   const asyncCall = () => {
     getTweets(searchValue, moreRequest)
@@ -335,7 +331,7 @@ const Home = () => {
                 }}
               >
                 <div className={styles.modalContainer}>
-                  <img src={imageActive.img} alt={imageActive.username} />{' '}
+                  <img src={imageActive.img} alt={imageActive.username} />
                   <button
                     onClick={() => {
                       setImageActive(false);

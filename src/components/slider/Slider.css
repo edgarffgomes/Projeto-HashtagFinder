@@ -61,6 +61,10 @@
     margin-left: 35px;
     margin-right: 35px;
    }
+
+   .swiper-slide {
+     width: max-content;
+   }
 }
 @media screen and (max-width: 1112px) {
   .swiper{
